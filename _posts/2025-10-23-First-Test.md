@@ -37,3 +37,9 @@ int main(){
 > > Very nice
 
 [Site](https://ahri2nd.xyz) is this will work?
+
+| 1st | 2nd | 3rd |
+|:---:|:---:|:---:|
+| a | b | c |
+| z | x | c |
+| aa | bb |
