@@ -25,12 +25,13 @@ __Thick__
 
 *Slide*
 
-```C
+```c
 #include <stdio.h>
 int main(){
     printf("Hello World!");
     return 0;
-}```
+}
+```    
 
 > Amazing
 > > Very nice
