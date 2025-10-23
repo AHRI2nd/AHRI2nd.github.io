@@ -16,7 +16,7 @@ Interested in Everything.
 
 ## 🔗 Contact & Social
 
-* **Website** [ahri2nd.xyz](https://ahri2nd.xyz)
-* **GitHub** [AHRI2nd](https://github.com/AHRI2nd)
-* **Email** [tsukimori@ahri2nd.xyz](mailto:tsukimori@ahri2nd.xyz)
-* **Discord** [@ahri2nd](https://discord.com/users/762945704951545867)
+* **Website**  [ahri2nd.xyz](https://ahri2nd.xyz)
+* **GitHub**  [AHRI2nd](https://github.com/AHRI2nd)
+* **Email**  [tsukimori@ahri2nd.xyz](mailto:tsukimori@ahri2nd.xyz)
+* **Discord**  [@ahri2nd](https://discord.com/users/762945704951545867)
