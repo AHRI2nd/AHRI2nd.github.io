@@ -14,7 +14,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: AHRI2nd Blog # the main title
+title: ARIS Blog # the main title
 
 tagline: Tsukimori Ahri's # it will display as the subtitle
 
@@ -103,6 +103,8 @@ avatar: /assets/Img/Main-Profile.jpg
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
 social_preview_image: /assets/Img/Logo_AHRI2ND.png
+
+favicon: /assets/img/favicon.png #Favicon-Site icon
 
 # boolean type, the global switch for TOC in posts.
 toc: true
