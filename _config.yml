@@ -104,7 +104,7 @@ avatar: /assets/Img/Main-Profile.jpg
 # It can be overridden by a customized `page.image` in front matter.
 social_preview_image: /assets/Img/Logo_AHRI2ND.png
 
-favicon: /assets/img/favicon.png #Favicon-Site icon
+favicon: /assets/Img/favicon.png #Favicon-Site icon
 
 # boolean type, the global switch for TOC in posts.
 toc: true
