@@ -1,4 +1,6 @@
-## AHRI2nd Web Blog Page
+## AHRI2nd Website Page
+
+https://ahri2nd.xyz
 
 Based on Chirpy theme
 
