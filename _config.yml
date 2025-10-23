@@ -98,13 +98,11 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/Img/Main-Profile.jpg
+avatar: /assets/img/Main-Profile.jpg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: /assets/Img/Logo_AHRI2ND.png
-
-favicon: /assets/Img/favicon.png #Favicon-Site icon
+social_preview_image: /assets/img/Logo_AHRI2ND.png
 
 # boolean type, the global switch for TOC in posts.
 toc: true
