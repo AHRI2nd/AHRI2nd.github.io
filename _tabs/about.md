@@ -10,7 +10,8 @@ order: 1
 
 ---
 
-Interested in Everything.
+Interested in Everything.  
+궁금하면 무엇이든 합니다.
 
 ---
 
