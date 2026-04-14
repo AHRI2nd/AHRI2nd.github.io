@@ -2,7 +2,7 @@
 title: Music
 published: 2025-10-24
 description: My favorite songs
-tags: [music]
+tags: [information, music]
 category: Music
 ---
 
@@ -16,8 +16,10 @@ category: Music
 ## Jenre
 
 - J-Pop
-    - Animation
     - Vocaloid
+    - Animation
+    - Rap
+    - Idol
 
 
 ## Playlist
