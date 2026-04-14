@@ -29,3 +29,8 @@ yarn.lock
 # ide
 .idea
 *.iml
+
+# custom
+unpatched.data/
+original.old/
+CLAUDE.md

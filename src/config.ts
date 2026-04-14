@@ -32,9 +32,19 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-			src: "/public/favicon/web-app-manifest-512x512.png", // Path of the favicon, relative to the /public directory
-			//	theme: "light", // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-			sizes: "512x512", // (Optional) Size of the favicon, set only if you have favicons of different sizes
+			src: "/favicon/favicon.svg",
+		},
+		{
+			src: "/favicon/favicon-96x96.png",
+			sizes: "96x96",
+		},
+		{
+			src: "/favicon/web-app-manifest-192x192.png",
+			sizes: "192x192",
+		},
+		{
+			src: "/favicon/web-app-manifest-512x512.png",
+			sizes: "512x512",
 		},
 	],
 };
@@ -53,7 +63,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "assets/images/Profile-Image.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Lorem Ipsum",
 	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 	links: [
