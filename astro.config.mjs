@@ -106,7 +106,29 @@ export default defineConfig({
 			},
 		}),
 		svelte(),
-		sitemap(),
+		sitemap({
+			filter: (page) =>
+				!page.includes("/rss.xml") && !page.includes("/robots.txt"),
+			serialize(item) {
+				// Home (paginated)
+				if (/ahri2nd\.xyz\/(page\/\d+\/)?$/.test(item.url)) {
+					return { ...item, changefreq: "daily", priority: 1.0 };
+				}
+				// Individual posts
+				if (item.url.includes("/posts/")) {
+					return { ...item, changefreq: "weekly", priority: 0.8 };
+				}
+				// Archive
+				if (item.url.includes("/archive/")) {
+					return { ...item, changefreq: "weekly", priority: 0.7 };
+				}
+				// About
+				if (item.url.includes("/about/")) {
+					return { ...item, changefreq: "monthly", priority: 0.5 };
+				}
+				return { ...item, changefreq: "weekly", priority: 0.6 };
+			},
+		}),
 	],
 	markdown: {
 		remarkPlugins: [
