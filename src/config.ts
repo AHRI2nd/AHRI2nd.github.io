@@ -1,5 +1,6 @@
 import type {
 	ExpressiveCodeConfig,
+	GiscusConfig,
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
@@ -85,6 +86,20 @@ export const profileConfig: ProfileConfig = {
 			url: "mailto:tsukimori@ahri2nd.xyz",
 		},
 	],
+};
+
+export const giscusConfig: GiscusConfig = {
+	enable: true,
+	repo: "AHRI2nd/AHRI2nd.github.io",
+	repoId: "R_kgDOR7tC_A",
+	category: "Comments",
+	categoryId: "DIC_kwDOR7tC_M4C630-",
+	mapping: "pathname",
+	reactionsEnabled: true,
+	inputPosition: "bottom",
+	lang: "ko",
+	lightTheme: "catppuccin_latte",
+	darkTheme: "catppuccin_mocha",
 };
 
 export const licenseConfig: LicenseConfig = {
