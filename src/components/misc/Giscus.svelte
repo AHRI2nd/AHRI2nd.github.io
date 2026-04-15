@@ -13,7 +13,9 @@ function getTheme(): string {
 }
 
 function sendThemeMessage(theme: string) {
-	const iframe = document.querySelector<HTMLIFrameElement>("iframe.giscus-frame");
+	const iframe = document.querySelector<HTMLIFrameElement>(
+		"iframe.giscus-frame",
+	);
 	iframe?.contentWindow?.postMessage(
 		{ giscus: { setConfig: { theme } } },
 		"https://giscus.app",
@@ -29,9 +31,15 @@ onMount(() => {
 	script.setAttribute("data-category-id", giscusConfig.categoryId);
 	script.setAttribute("data-mapping", giscusConfig.mapping ?? "pathname");
 	script.setAttribute("data-strict", "0");
-	script.setAttribute("data-reactions-enabled", giscusConfig.reactionsEnabled !== false ? "1" : "0");
+	script.setAttribute(
+		"data-reactions-enabled",
+		giscusConfig.reactionsEnabled !== false ? "1" : "0",
+	);
 	script.setAttribute("data-emit-metadata", "0");
-	script.setAttribute("data-input-position", giscusConfig.inputPosition ?? "top");
+	script.setAttribute(
+		"data-input-position",
+		giscusConfig.inputPosition ?? "top",
+	);
 	script.setAttribute("data-theme", getTheme());
 	script.setAttribute("data-lang", giscusConfig.lang ?? "ko");
 	script.setAttribute("data-loading", "lazy");
