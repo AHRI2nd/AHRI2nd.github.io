@@ -1,7 +1,7 @@
 ---
-title: Music
+title: Favorites
 published: 2025-10-24
-description: My favorite songs
+description: My favorites
 tags: [information, music]
 category: Music
 ---

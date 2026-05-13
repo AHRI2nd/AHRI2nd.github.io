@@ -1,6 +1,6 @@
 {
 	"name": "ARIS Blog",
-	"short_name": "ARISblog",
+	"short_name": "ARIS Blog",
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#ffffff",
