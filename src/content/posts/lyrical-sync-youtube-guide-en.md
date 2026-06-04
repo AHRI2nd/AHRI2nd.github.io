@@ -1,10 +1,15 @@
 ---
 title: "YouTube Audio Loading Guide"
+unlisted:
+  home: true
+  archive: false
+  tags: false
+  category: false
 published: 2026-05-19
 description: "How to use yt-dlp in Lyrical Sync to download audio from YouTube videos for waveform visualization and LRC timestamp editing."
 tags: [Lyrical Sync, Guide]
 category: Lyrical Sync
-language: en
+lang: en
 ---
 
 Lyrical Sync uses yt-dlp to download audio from YouTube videos to a temporary file, enabling waveform visualization and LRC timestamp editing.

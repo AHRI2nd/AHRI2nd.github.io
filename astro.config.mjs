@@ -33,7 +33,26 @@ export default defineConfig({
 	integrations: [
 		AstroPWA({
 			registerType: "autoUpdate",
-			manifest: {},
+			manifest: {
+				name: "ARIS Blog",
+				short_name: "ARIS Blog",
+				start_url: "/",
+				display: "standalone",
+				background_color: "#ffffff",
+				theme_color: "#3b82f6",
+				icons: [
+					{
+						src: "/favicon/web-app-manifest-192x192.png",
+						sizes: "192x192",
+						type: "image/png",
+					},
+					{
+						src: "/favicon/web-app-manifest-512x512.png",
+						sizes: "512x512",
+						type: "image/png",
+					},
+				],
+			},
 		}),
 		tailwind({
 			nesting: true,
@@ -54,7 +73,6 @@ export default defineConfig({
 		}),
 		icon({
 			include: {
-				"preprocess: vitePreprocess(),": ["*"],
 				"fa6-brands": ["*"],
 				"fa6-regular": ["*"],
 				"fa6-solid": ["*"],

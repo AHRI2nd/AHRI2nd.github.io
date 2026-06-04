@@ -5,7 +5,7 @@ import Markdown from "@components/misc/Markdown.astro";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
-import { getSortedPosts } from "@utils/content-utils";
+import { getAllPostsForGeneration, getSortedPosts } from "@utils/content-utils";
 import { getDir, getPostUrlBySlug } from "@utils/url-utils";
 import { Icon } from "astro-icon/components";
 import { giscusConfig, licenseConfig } from "src/config";
@@ -16,8 +16,12 @@ import { profileConfig, siteConfig } from "../../config";
 import { formatDateToYYYYMMDD } from "../../utils/date-utils";
 
 export async function getStaticPaths() {
-	const blogEntries = await getSortedPosts();
-	return blogEntries.map((entry) => ({
+	// Listed posts have prev/next navigation set; others are appended without it
+	const listedPosts = await getSortedPosts();
+	const listedSlugs = new Set(listedPosts.map((p) => p.slug));
+	const allPosts = await getAllPostsForGeneration();
+	const otherPosts = allPosts.filter((p) => !listedSlugs.has(p.slug));
+	return [...listedPosts, ...otherPosts].map((entry) => ({
 		params: { slug: entry.slug },
 		props: { entry },
 	}));

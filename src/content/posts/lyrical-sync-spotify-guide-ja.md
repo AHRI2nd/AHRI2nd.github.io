@@ -1,10 +1,15 @@
 ---
 title: "Spotify連携 セットアップ・使い方ガイド"
+unlisted:
+  home: true
+  archive: false
+  tags: false
+  category: false
 published: 2026-05-19
 description: "Lyrical SyncでSpotify Web Playback SDKを連携し、アプリ内でSpotifyの楽曲を直接再生しながらLRCファイルを編集する方法を説明します。"
 tags: [Lyrical Sync, Guide]
 category: Lyrical Sync
-language: ja
+lang: ja
 ---
 
 Lyrical SyncはSpotify Web Playback SDKを通じて、アプリ内でSpotifyの楽曲を直接再生しながらLRCファイルを編集できます。  

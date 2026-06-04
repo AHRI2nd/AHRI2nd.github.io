@@ -1,10 +1,15 @@
 ---
 title: "AI 자동 싱크 설치 및 사용 가이드"
+unlisted:
+  home: true
+  archive: false
+  tags: false
+  category: false
 published: 2026-05-19
 description: "Lyrical Sync의 AI 자동 싱크 기능(CTC Forced Aligner + Demucs) 설치 방법과 타임스탬프 자동 정렬 사용법을 설명합니다."
 tags: [Lyrical Sync, Guide]
 category: Lyrical Sync
-language: ko
+lang: ko
 ---
 
 Lyrical Sync의 AI 자동 싱크 기능은 음성 인식(CTC Forced Aligner)을 활용해 가사 텍스트에 타임스탬프를 자동으로 부여합니다.  

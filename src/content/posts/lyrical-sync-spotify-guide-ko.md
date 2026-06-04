@@ -1,10 +1,15 @@
 ---
 title: "Spotify 연동 설치 및 사용 가이드"
+unlisted:
+  home: true
+  archive: false
+  tags: false
+  category: false
 published: 2026-05-19
 description: "Lyrical Sync에서 Spotify Web Playback SDK를 연동해 Spotify 곡을 앱 내에서 직접 재생하며 LRC를 편집하는 방법을 설명합니다."
 tags: [Lyrical Sync, Guide]
 category: Lyrical Sync
-language: ko
+lang: ko
 ---
 
 Lyrical Sync는 Spotify Web Playback SDK를 통해 Spotify 곡을 앱 내에서 직접 재생하며 LRC를 편집할 수 있습니다.  

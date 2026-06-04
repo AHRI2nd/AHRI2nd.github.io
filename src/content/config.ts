@@ -6,6 +6,15 @@ const postsCollection = defineCollection({
 		published: z.date(),
 		updated: z.date().optional(),
 		draft: z.boolean().optional().default(false),
+		unlisted: z
+			.object({
+				home: z.boolean().optional().default(false),
+				archive: z.boolean().optional().default(false),
+				tags: z.boolean().optional().default(false),
+				category: z.boolean().optional().default(false),
+			})
+			.optional()
+			.default({}),
 		description: z.string().optional().default(""),
 		image: z.string().optional().default(""),
 		tags: z.array(z.string()).optional().default([]),

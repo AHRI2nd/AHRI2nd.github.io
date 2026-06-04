@@ -1,10 +1,15 @@
 ---
 title: "YouTube 오디오 불러오기 가이드"
+unlisted:
+  home: true
+  archive: false
+  tags: false
+  category: false
 published: 2026-05-19
 description: "Lyrical Sync에서 yt-dlp를 통해 YouTube 영상의 오디오를 불러와 파형 시각화 및 LRC 타임스탬프 작업에 활용하는 방법을 설명합니다."
 tags: [Lyrical Sync, Guide]
 category: Lyrical Sync
-language: ko
+lang: ko
 ---
 
 Lyrical Sync는 yt-dlp를 통해 YouTube 영상의 오디오를 임시 파일로 다운로드하여 파형 시각화 및 LRC 타임스탬프 작업에 활용할 수 있습니다.

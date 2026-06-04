@@ -1,10 +1,15 @@
 ---
 title: "Spotify Integration Setup & Usage Guide"
+unlisted:
+  home: true
+  archive: false
+  tags: false
+  category: false
 published: 2026-05-19
 description: "How to integrate Spotify Web Playback SDK with Lyrical Sync to play Spotify tracks directly in the app while editing LRC files."
 tags: [Lyrical Sync, Guide]
 category: Lyrical Sync
-language: en
+lang: en
 ---
 
 Lyrical Sync integrates with the Spotify Web Playback SDK to let you play Spotify tracks directly in the app while editing LRC files.  

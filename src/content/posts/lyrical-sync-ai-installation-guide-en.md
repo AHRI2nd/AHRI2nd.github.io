@@ -1,10 +1,15 @@
 ---
 title: "AI Auto-Sync Installation & Usage Guide"
+unlisted:
+  home: true
+  archive: false
+  tags: false
+  category: false
 published: 2026-05-19
 description: "How to install and use Lyrical Sync's AI Auto-Sync feature (CTC Forced Aligner + Demucs) for automatic lyric timestamp alignment."
 tags: [Lyrical Sync, Guide]
 category: Lyrical Sync
-language: en
+lang: en
 ---
 
 Lyrical Sync's AI Auto-Sync feature uses CTC Forced Aligner to automatically assign timestamps to lyrics text.  

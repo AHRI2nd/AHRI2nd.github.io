@@ -1,10 +1,15 @@
 ---
 title: "YouTube オーディオ読み込みガイド"
+unlisted:
+  home: true
+  archive: false
+  tags: false
+  category: false
 published: 2026-05-19
 description: "Lyrical Syncでyt-dlpを使用してYouTube動画の音声を読み込み、波形表示およびLRCタイムスタンプ編集に活用する方法を説明します。"
 tags: [Lyrical Sync, Guide]
 category: Lyrical Sync
-language: ja
+lang: ja
 ---
 
 Lyrical Sync は yt-dlp を使用して YouTube 動画の音声を一時ファイルとしてダウンロードし、波形表示および LRC タイムスタンプ編集に活用できます。

@@ -1,10 +1,15 @@
 ---
 title: "AI自動同期 インストール・使い方ガイド"
+unlisted:
+  home: true
+  archive: false
+  tags: false
+  category: false
 published: 2026-05-19
 description: "Lyrical SyncのAI自動同期機能（CTC Forced Aligner + Demucs）のインストール方法と歌詞タイムスタンプ自動整合の使い方を説明します。"
 tags: [Lyrical Sync, Guide]
 category: Lyrical Sync
-language: ja
+lang: ja
 ---
 
 Lyrical SyncのAI自動同期機能は、CTC Forced Alignerを使って歌詞テキストにタイムスタンプを自動付与します。  
