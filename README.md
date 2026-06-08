@@ -1,7 +1,3 @@
-# ARIS Blog
+# Personal Potfolio
 
-Let's Talk About Something
-
-[Link](https://ahri2nd.xyz)
-
-^^^^
+For the school project。
