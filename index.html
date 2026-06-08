@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tsukimori Ahri — Developer & Creator">
+  <title>Tsukimori Ahri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="ambient">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <nav class="nav">
+    <a href="#home" class="nav-logo">T. Ahri</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://ahri2nd.xyz" target="_blank" rel="noopener">Blog ↗</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="hero-greeting reveal">Hello,</p>
+        <h1 class="hero-name reveal">Tsukimori Ahri</h1>
+        <p class="hero-tagline reveal"><em>Charmed, I'm Sure (:</em></p>
+        <p class="hero-sub reveal">Developer &nbsp;·&nbsp; Creator &nbsp;·&nbsp; Music Enthusiast</p>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-ghost">Contact</a>
+        </div>
+      </div>
+      <div class="hero-scroll reveal">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">scroll</span>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-wrap">
+        <header class="section-header reveal">
+          <span class="section-num">01</span>
+          <h2 class="section-title">Projects</h2>
+        </header>
+
+        <div class="cards">
+
+          <article class="card reveal">
+            <div class="card-top">
+              <span class="card-glyph">♪</span>
+              <div class="card-badges">
+                <span class="badge">Tauri</span>
+                <span class="badge">React</span>
+                <span class="badge">TypeScript</span>
+              </div>
+            </div>
+            <h3 class="card-name">Lyrical Sync</h3>
+            <p class="card-desc">
+              LRC 가사 파일 제작·편집 데스크탑 앱. 웨이브폼 시각화, 실시간 타임스탬프 스탬핑,
+              AI 자동 싱크(CTC Forced Aligner + Demucs)를 제공합니다.
+            </p>
+            <a href="https://github.com/AHRI2nd/Lyrical-Sync" target="_blank" rel="noopener" class="card-link">
+              GitHub <span class="arrow">→</span>
+            </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-top">
+              <span class="card-glyph">◈</span>
+              <div class="card-badges">
+                <span class="badge">Spicetify</span>
+                <span class="badge">JavaScript</span>
+              </div>
+            </div>
+            <h3 class="card-name">Lyricaload</h3>
+            <p class="card-desc">
+              Spotify Lyrics Plus 패널에 로컬 LRC 파일을 불러오는 Spicetify 확장.
+              빌드 도구 없이 순수 JS 단일 파일로 제작했습니다.
+            </p>
+          </article>
+
+          <article class="card reveal card-blog">
+            <div class="card-top">
+              <span class="card-glyph">✦</span>
+              <div class="card-badges">
+                <span class="badge">Astro</span>
+                <span class="badge">Svelte</span>
+              </div>
+            </div>
+            <h3 class="card-name">ARIS Blog</h3>
+            <p class="card-desc">
+              개발 경험과 생각을 기록하는 개인 블로그.
+              Fuwari 기반으로 커스텀 플러그인과 다국어 포스트를 운영합니다.
+            </p>
+            <a href="https://ahri2nd.xyz" target="_blank" rel="noopener" class="card-link">
+              Visit <span class="arrow">→</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-wrap">
+        <header class="section-header reveal">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Contact</h2>
+        </header>
+        <p class="contact-line reveal">Feel free to reach out.</p>
+        <div class="contact-items reveal">
+          <a href="mailto:tsukimori@ahri2nd.xyz" class="contact-item">
+            <span class="contact-icon">✉</span>
+            <span>tsukimori@ahri2nd.xyz</span>
+          </a>
+          <a href="https://github.com/AHRI2nd" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-icon">⌥</span>
+            <span>github.com/AHRI2nd</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Tsukimori Ahri</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
