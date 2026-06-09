@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tsukimori Ahri — Developer & Creator">
-  <title>Tsukimori Ahri</title>
+  <meta name="description" content="이상민 — 동양미래대학교 컴퓨터소프트웨어공학과">
+  <title>Sangmin</title>
   <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2/fonts/variable/woff2/SUITE-Variable.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,9 +18,11 @@
   </div>
 
   <nav class="nav">
-    <a href="#home" class="nav-logo">T. Ahri</a>
+    <a href="#home" class="nav-logo">Sangmin Lee</a>
     <ul class="nav-links">
+      <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://ahri2nd.xyz" target="_blank" rel="noopener">Blog ↗</a></li>
     </ul>
@@ -28,15 +30,17 @@
 
   <main>
 
+    <!-- ─── Hero ─── -->
     <section class="hero" id="home">
       <div class="hero-inner">
         <p class="hero-greeting reveal">Hello,</p>
-        <h1 class="hero-name reveal">Tsukimori Ahri</h1>
-        <p class="hero-tagline reveal"><em>Charmed, I'm Sure (:</em></p>
+        <h1 class="hero-name reveal">이상민</h1>
+        <p class="hero-tagline reveal">동양미래대학교 컴퓨터소프트웨어공학과</p>
         <p class="hero-sub reveal">Developer &nbsp;·&nbsp; Creator &nbsp;·&nbsp; Music Enthusiast</p>
         <div class="hero-actions reveal">
           <a href="#projects" class="btn-primary">View Projects</a>
           <a href="#contact" class="btn-ghost">Contact</a>
+          <a href="https://ahri2nd.xyz" target="_blank" rel="noopener" class="btn-ghost">Blog ↗</a>
         </div>
       </div>
       <div class="hero-scroll reveal">
@@ -45,6 +49,48 @@
       </div>
     </section>
 
+    <!-- ─── About ─── -->
+    <section class="section" id="about">
+      <div class="section-wrap">
+        <header class="section-header reveal">
+          <span class="section-num">00</span>
+          <h2 class="section-title">About</h2>
+        </header>
+        <div class="about-body">
+          <div class="about-text reveal">
+            <p>
+              데스크탑·모바일·오디오 영역을 넘나드는 소프트웨어를 만들고 있습니다.
+              사용자가 직접 느낄 수 있는 도구를 만드는 데 관심이 많으며,
+              음악과 영상 관련 툴체인에 특히 집중하고 있습니다.
+            </p>
+            <p>
+              개인 프로젝트를 통해 Tauri, .NET MAUI, C++/JUCE 등 다양한 스택을 탐구하며
+              실용적인 소프트웨어를 설계하고 구현합니다.
+            </p>
+          </div>
+          <ul class="about-meta reveal">
+            <li>
+              <span class="meta-label">소속</span>
+              <span class="meta-value">동양미래대학교</span>
+            </li>
+            <li>
+              <span class="meta-label">학과</span>
+              <span class="meta-value">컴퓨터소프트웨어공학과</span>
+            </li>
+            <li>
+              <span class="meta-label">Focus</span>
+              <span class="meta-value">Desktop · Mobile · Audio</span>
+            </li>
+            <li>
+              <span class="meta-label">Blog</span>
+              <a href="https://ahri2nd.xyz" target="_blank" rel="noopener" class="meta-link">ahri2nd.xyz ↗</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Projects ─── -->
     <section class="section" id="projects">
       <div class="section-wrap">
         <header class="section-header reveal">
@@ -68,9 +114,14 @@
               LRC 가사 파일 제작·편집 데스크탑 앱<br>
               AI 자동 싱크(CTC Forced Aligner + Demucs)
             </p>
-            <a href="https://github.com/AHRI2nd/Lyrical-Sync" target="_blank" rel="noopener" class="card-link">
-              GitHub <span class="arrow">→</span>
-            </a>
+            <div class="card-links">
+              <a href="https://github.com/AHRI2nd/Lyrical-Sync" target="_blank" rel="noopener" class="card-link">
+                GitHub <span class="arrow">→</span>
+              </a>
+              <a href="https://ahri2nd.xyz/posts/lyrical-sync-intro/" target="_blank" rel="noopener" class="card-link">
+                프로젝트 개요 <span class="arrow">→</span>
+              </a>
+            </div>
           </article>
 
           <article class="card reveal">
@@ -87,9 +138,12 @@
               요일별 애니메이션 편성표와 로컬 알림을 제공하는 크로스 플랫폼 모바일 앱<br>
               Anissia·Jikan 실시간 데이터와 Supabase 백엔드 기반, iOS·Android 지원
             </p>
-            <a href="https://github.com/AHRI2nd/AniTime" target="_blank" rel="noopener" class="card-link">
-              GitHub <span class="arrow">→</span>
-            </a>
+            <div class="card-links">
+              <a href="https://github.com/AHRI2nd/AniTime" target="_blank" rel="noopener" class="card-link">
+                GitHub <span class="arrow">→</span>
+              </a>
+              <span class="card-status">앱스토어 배포 준비 중</span>
+            </div>
           </article>
 
           <article class="card reveal">
@@ -106,9 +160,12 @@
               노드 그래프 기반 Windows 오디오 라우터<br>
               WASAPI 저지연 I/O, VST3 플러그인 호스팅, ASIO 지원
             </p>
-            <a href="https://github.com/AHRI2nd/Signally" target="_blank" rel="noopener" class="card-link">
-              GitHub <span class="arrow">→</span>
-            </a>
+            <div class="card-links">
+              <a href="https://github.com/AHRI2nd/Signally" target="_blank" rel="noopener" class="card-link">
+                GitHub <span class="arrow">→</span>
+              </a>
+              <span class="card-status">개발 중</span>
+            </div>
           </article>
 
           <article class="card reveal">
@@ -124,19 +181,65 @@
             <p class="card-desc">
               SRT·VTT·ASS·SMI를 지원하는 전문 자막 편집기
             </p>
-            <a href="https://github.com/AHRI2nd/Glyphline" target="_blank" rel="noopener" class="card-link">
-              GitHub <span class="arrow">→</span>
-            </a>
+            <div class="card-links">
+              <a href="https://github.com/AHRI2nd/Glyphline" target="_blank" rel="noopener" class="card-link">
+                GitHub <span class="arrow">→</span>
+              </a>
+              <span class="card-status">개발 중</span>
+            </div>
           </article>
 
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <!-- ─── Skills ─── -->
+    <section class="section section-alt" id="skills">
       <div class="section-wrap">
         <header class="section-header reveal">
           <span class="section-num">02</span>
+          <h2 class="section-title">Skills</h2>
+        </header>
+
+        <div class="skill-groups">
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">Frameworks & Platforms</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Tauri</span>
+              <span class="skill-tag">.NET MAUI</span>
+              <span class="skill-tag">JUCE</span>
+              <span class="skill-tag">Astro</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">Tools & Libraries</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Supabase</span>
+              <span class="skill-tag">WASAPI</span>
+              <span class="skill-tag">libmpv</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Contact ─── -->
+    <section class="section" id="contact">
+      <div class="section-wrap">
+        <header class="section-header reveal">
+          <span class="section-num">03</span>
           <h2 class="section-title">Contact</h2>
         </header>
         <p class="contact-line reveal">Feel free to reach out.</p>
@@ -156,7 +259,7 @@
   </main>
 
   <footer class="footer">
-    <p>© 2026 Tsukimori Ahri</p>
+    <p>© 2026 이상민</p>
   </footer>
 
   <script src="script.js"></script>
