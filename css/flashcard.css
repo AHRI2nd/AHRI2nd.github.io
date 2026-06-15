@@ -13,48 +13,6 @@
   --progress-bg: #21262d;
 }
 
-/* ===== Category Filter ===== */
-#cat-html:checked     ~ .site-wrapper .card:not(.html-card)     { display: none; }
-#cat-css:checked      ~ .site-wrapper .card:not(.css-card)      { display: none; }
-#cat-boxmodel:checked ~ .site-wrapper .card:not(.boxmodel-card) { display: none; }
-
-/* Active filter label highlight */
-#cat-all:checked      ~ .site-wrapper label[for="cat-all"],
-#cat-html:checked     ~ .site-wrapper label[for="cat-html"],
-#cat-css:checked      ~ .site-wrapper label[for="cat-css"],
-#cat-boxmodel:checked ~ .site-wrapper label[for="cat-boxmodel"] {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--accent);
-}
-
-/* ===== Nav Filter Tabs ===== */
-.filter-tabs {
-  display: flex;
-  gap: 0.4rem;
-  flex: 1;
-}
-
-.filter-label {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.3rem 0.9rem;
-  border-radius: 20px;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  color: var(--nav-text);
-  font-size: 0.82rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-  user-select: none;
-  white-space: nowrap;
-}
-
-.filter-label:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--nav-link-hover);
-}
-
 /* ===== Card Count Label ===== */
 .progress-section {
   padding: 0.35rem 2rem;
@@ -239,10 +197,6 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
-  .filter-tabs {
-    flex-wrap: wrap;
-  }
-
   .content {
     padding: 1.5rem 1rem;
   }

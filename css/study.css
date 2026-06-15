@@ -1,11 +1,11 @@
 /* ===== Study Page Layout ===== */
 .study-wrapper {
   display: grid;
-  grid-template-columns: 210px 1fr;
+  grid-template-columns: 200px 1fr;
   gap: 2.5rem;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2.5rem 2rem;
+  padding: 2rem;
   align-items: start;
 }
 
@@ -16,39 +16,31 @@
 }
 
 .toc-title {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--text-secondary);
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--border);
 }
 
 .toc-list {
-  list-style: none;
+  list-style: disc;
+  padding-left: 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.35rem;
 }
 
 .toc-list a {
-  display: block;
-  padding: 0.45rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-  border-left: 2px solid transparent;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: underline;
   line-height: 1.4;
 }
 
 .toc-list a:hover {
-  background: rgba(67, 97, 238, 0.08);
-  color: var(--accent);
-  border-left-color: var(--accent);
+  text-decoration: none;
 }
 
 /* ===== Main Content ===== */
@@ -58,9 +50,9 @@
 
 /* ===== Section ===== */
 .study-section {
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 1.5px solid var(--border);
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
   scroll-margin-top: 80px;
 }
 
@@ -69,124 +61,35 @@
 }
 
 .study-h2 {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-.study-h2::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 1.2em;
-  background: linear-gradient(180deg, #4361ee, #4cc9f0);
-  border-radius: 2px;
-  flex-shrink: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--border);
 }
 
 .study-h3 {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent);
-  margin: 1.5rem 0 0.6rem;
+  color: var(--text-primary);
+  margin: 1.25rem 0 0.5rem;
 }
 
 .study-p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.75;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.7;
   margin-bottom: 0.6rem;
-}
-
-/* ===== Info Grid ===== */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.9rem;
-  margin-bottom: 1.5rem;
-}
-
-.info-card {
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  padding: 1.1rem 1.25rem;
-  box-shadow: 0 2px 8px var(--shadow);
-}
-
-.info-card-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-}
-
-.info-card-value {
-  font-size: 0.88rem;
-  color: var(--text-primary);
-  line-height: 1.55;
-}
-
-/* ===== Grade Bars ===== */
-.grade-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 1.25rem;
-}
-
-.grade-item {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-.grade-label {
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  width: 130px;
-  flex-shrink: 0;
-}
-
-.grade-track {
-  flex: 1;
-  height: 7px;
-  background: var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.grade-fill {
-  height: 100%;
-  width: var(--pct);
-  border-radius: 4px;
-  background: linear-gradient(90deg, #4361ee, #4cc9f0);
-}
-
-.grade-pct {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--accent);
-  width: 32px;
-  text-align: right;
-  flex-shrink: 0;
 }
 
 /* ===== Highlight Box ===== */
 .highlight-box {
-  background: rgba(67, 97, 238, 0.06);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 10px 10px 0;
-  padding: 1rem 1.25rem;
+  background: var(--page-nav-bg);
+  border-left: 4px solid var(--accent);
+  padding: 0.85rem 1.1rem;
   margin: 1rem 0;
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--text-primary);
   line-height: 1.7;
 }
@@ -195,73 +98,45 @@
   color: var(--accent);
 }
 
-.warn-box {
-  background: rgba(234, 88, 12, 0.06);
-  border-left: 3px solid #ea580c;
-  border-radius: 0 10px 10px 0;
-  padding: 1rem 1.25rem;
-  margin: 1rem 0;
-  font-size: 0.88rem;
-  color: var(--text-primary);
-  line-height: 1.7;
-}
-
-.warn-box strong { color: #ea580c; }
-
 /* ===== Key Points List ===== */
 .key-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  list-style: disc;
+  padding-left: 1.4rem;
   margin: 0.5rem 0 0.75rem;
 }
 
 .key-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.55rem;
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--text-primary);
-  line-height: 1.6;
-}
-
-.key-list li::before {
-  content: '▸';
-  color: var(--accent);
-  font-size: 0.75em;
-  margin-top: 0.25em;
-  flex-shrink: 0;
+  line-height: 1.7;
+  margin-bottom: 0.3rem;
 }
 
 /* ===== Code Blocks ===== */
 .code-block {
-  background: #0d1117;
-  border: 1px solid #30363d;
-  border-radius: 10px;
-  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
   margin: 1rem 0;
   font-size: 0;
 }
 
 .code-label {
   display: block;
-  background: #161b22;
-  padding: 0.45rem 1rem;
-  font-size: 0.72rem;
+  background: var(--page-nav-bg);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: #8b949e;
-  border-bottom: 1px solid #30363d;
-  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
 }
 
 .code-block pre {
   margin: 0;
-  padding: 1.1rem 1.25rem;
-  font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 0.82rem;
-  line-height: 1.65;
-  color: #e6edf3;
+  padding: 0.9rem 1.1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-primary);
   overflow-x: auto;
 }
 
@@ -277,32 +152,26 @@
 .compare-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   margin: 1rem 0;
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
+  border: 1px solid var(--border);
 }
 
 .compare-table th {
-  background: var(--nav-bg);
-  color: #ffffff;
-  padding: 0.65rem 1rem;
+  background: var(--page-nav-bg);
+  color: var(--text-primary);
+  padding: 0.55rem 0.9rem;
   text-align: left;
-  font-weight: 600;
-  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid var(--border);
 }
 
 .compare-table td {
-  padding: 0.75rem 1rem;
-  border-top: 1px solid var(--border);
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border);
   color: var(--text-primary);
   vertical-align: top;
   line-height: 1.55;
-}
-
-.compare-table tr:nth-child(even) td {
-  background: rgba(67, 97, 238, 0.03);
 }
 
 /* ===== Responsive ===== */
@@ -315,24 +184,6 @@
 
   .study-toc {
     position: static;
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem;
-  }
-
-  .toc-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-  }
-
-  .toc-list a {
-    border-left: none;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    padding: 0.3rem 0.75rem;
-    white-space: nowrap;
   }
 
   .code-compare {
