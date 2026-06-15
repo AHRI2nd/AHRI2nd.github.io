@@ -76,13 +76,19 @@
   flex: 1;
 }
 
+/* 모바일 우선: 1열 기본 → 폭이 커질수록 명시적 단계로 열 추가.
+   (auto-fill 은 일부 브라우저에서 실시간 리사이즈 시 리페인트가 누락되어
+    1열로 멈추는 현상이 있어 명시적 breakpoint 로 고정한다) */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
+@media (min-width: 600px)  { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 920px)  { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1200px) { .cards-grid { grid-template-columns: repeat(4, 1fr); } }
 
 /* ===== Flip Card ===== */
 .card-toggle { display: none; }
@@ -239,9 +245,5 @@
 
   .content {
     padding: 1.5rem 1rem;
-  }
-
-  .cards-grid {
-    grid-template-columns: 1fr;
   }
 }
