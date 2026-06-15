@@ -1,0 +1,341 @@
+/* ===== Study Page Layout ===== */
+.study-wrapper {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  align-items: start;
+}
+
+/* ===== TOC Sidebar ===== */
+.study-toc {
+  position: sticky;
+  top: 80px;
+}
+
+.toc-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.toc-list a {
+  display: block;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  border-left: 2px solid transparent;
+  line-height: 1.4;
+}
+
+.toc-list a:hover {
+  background: rgba(67, 97, 238, 0.08);
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+/* ===== Main Content ===== */
+.study-content {
+  min-width: 0;
+}
+
+/* ===== Section ===== */
+.study-section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1.5px solid var(--border);
+  scroll-margin-top: 80px;
+}
+
+.study-section:last-child {
+  border-bottom: none;
+}
+
+.study-h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.study-h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.2em;
+  background: linear-gradient(180deg, #4361ee, #4cc9f0);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.study-h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 1.5rem 0 0.6rem;
+}
+
+.study-p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 0.6rem;
+}
+
+/* ===== Info Grid ===== */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.info-card-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.info-card-value {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.55;
+}
+
+/* ===== Grade Bars ===== */
+.grade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.grade-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.grade-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  width: 130px;
+  flex-shrink: 0;
+}
+
+.grade-track {
+  flex: 1;
+  height: 7px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.grade-fill {
+  height: 100%;
+  width: var(--pct);
+  border-radius: 4px;
+  background: linear-gradient(90deg, #4361ee, #4cc9f0);
+}
+
+.grade-pct {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  width: 32px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ===== Highlight Box ===== */
+.highlight-box {
+  background: rgba(67, 97, 238, 0.06);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.highlight-box strong {
+  color: var(--accent);
+}
+
+.warn-box {
+  background: rgba(234, 88, 12, 0.06);
+  border-left: 3px solid #ea580c;
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.warn-box strong { color: #ea580c; }
+
+/* ===== Key Points List ===== */
+.key-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.key-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.key-list li::before {
+  content: '▸';
+  color: var(--accent);
+  font-size: 0.75em;
+  margin-top: 0.25em;
+  flex-shrink: 0;
+}
+
+/* ===== Code Blocks ===== */
+.code-block {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+  font-size: 0;
+}
+
+.code-label {
+  display: block;
+  background: #161b22;
+  padding: 0.45rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #8b949e;
+  border-bottom: 1px solid #30363d;
+  letter-spacing: 0.05em;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 1.1rem 1.25rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #e6edf3;
+  overflow-x: auto;
+}
+
+/* ===== Code Compare (2-column) ===== */
+.code-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* ===== Concept Compare Table ===== */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 1rem 0;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.compare-table th {
+  background: var(--nav-bg);
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.compare-table td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-primary);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.compare-table tr:nth-child(even) td {
+  background: rgba(67, 97, 238, 0.03);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .study-wrapper {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .study-toc {
+    position: static;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .toc-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .toc-list a {
+    border-left: none;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.75rem;
+    white-space: nowrap;
+  }
+
+  .code-compare {
+    grid-template-columns: 1fr;
+  }
+}

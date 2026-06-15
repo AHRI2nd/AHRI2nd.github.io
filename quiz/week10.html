@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10주차 퀴즈 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flashcard.css">
+</head>
+<body>
+
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+  <input type="radio"    name="category" id="cat-all" class="hidden-input" checked>
+  <input type="radio"    name="category" id="cat-css" class="hidden-input">
+
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">10주차 퀴즈</span>
+        </div>
+        <div class="filter-tabs">
+          <label for="cat-all" class="filter-label">ALL</label>
+          <label for="cat-css" class="filter-label">CSS</label>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+      <div class="progress-section">
+        <span class="progress-text">10주차 · 12 카드</span>
+      </div>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week09.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../week/week10.html" class="btn-nav">학습 내용 보기</a></div>
+      <div><a href="week11.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-grid">
+
+        <!-- ==================== Grid vs Flexbox ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-01" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-01">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. CSS Grid와 Flexbox의 가장 큰 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>Flexbox</strong>: 가로 행 <em>또는</em> 세로 열, <strong>한 방향</strong> 레이아웃.<br><strong>Grid</strong>: 가로 행 <em>과</em> 세로 열, <strong>두 방향</strong> 동시 레이아웃.<br><br>→ 단순 정렬은 Flexbox, 행·열을 함께 제어하는 복잡한 배치는 Grid.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== Grid 용어 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-02" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-02">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. Grid 용어 세 가지 — <em>grid line</em>, <em>grid track</em>, <em>grid cell</em>을 각각 설명하라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>grid line</strong>: 격자를 나누는 선. 1, 2, 3… 번호로 참조.<br><strong>grid track</strong>: 두 라인 사이의 간격 → 하나의 행 또는 열.<br><strong>grid cell</strong>: 격자 한 칸 (행 트랙 × 열 트랙의 최소 단위).</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== display:grid ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-03" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-03">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. Grid 레이아웃을 시작하려면 어떤 요소에 어떤 속성을 먼저 지정해야 하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>부모 요소(컨테이너)</strong>에 <code>display: grid</code>를 지정.<br><pre>.container {
+  display: grid;
+}</pre>자식 요소(아이템)는 자동으로 grid 아이템이 됨.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== grid-template ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-04" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-04">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>grid-template-rows</code>와 <code>grid-template-columns</code>의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>grid-template-rows</code>: 세로를 몇 개로 분할할지 → <strong>셀의 높이</strong> 지정.<br><code>grid-template-columns</code>: 가로를 몇 개로 분할할지 → <strong>셀의 너비</strong> 지정.<br><pre>.photoGallery {
+  grid-template-rows: 40vw 30vw 30vw 40vw 40vw;
+  grid-template-columns: 50% 50%;
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-05" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-05">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>grid-template-columns: auto auto auto</code>은 어떻게 동작하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">컨테이너를 <strong>3열로 균등 분할</strong>. <code>auto</code>는 남은 공간을 같은 비율로 나눔.<br>값이 3개이므로 열이 3개 생성됨.<br><br>→ <code>auto auto auto</code> = <code>33.3% 33.3% 33.3%</code>와 유사한 효과.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 아이템 배치 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-06" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-06">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. Grid 아이템 배치 속성 4가지(<code>grid-row-start</code>, <code>grid-row-end</code>, <code>grid-column-start</code>, <code>grid-column-end</code>)의 역할은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">아이템이 차지할 grid line 범위를 지정.<br><code>grid-row-start</code>: 시작 행 라인 번호<br><code>grid-row-end</code>: 끝 행 라인 번호<br><code>grid-column-start</code>: 시작 열 라인 번호<br><code>grid-column-end</code>: 끝 열 라인 번호<br><pre>.item01 {
+  grid-row-start: 1;  grid-row-end: 2;
+  grid-column-start: 1;  grid-column-end: 3;
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-07" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-07">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>grid-row: 2/4</code>와 <code>grid-column: 1/2</code>를 단축 표기 방법으로 설명하고, 이 아이템이 차지하는 영역은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>grid-row: 시작라인/끝라인</code>, <code>grid-column: 시작라인/끝라인</code> 형식.<br><br><code>grid-row: 2/4</code> → 행 라인 2~4 사이 = <strong>2행, 3행</strong> (2칸)<br><code>grid-column: 1/2</code> → 열 라인 1~2 사이 = <strong>왼쪽 1열</strong> (1칸)</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-08" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-08">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 2열 그리드에서 아이템이 <strong>전체 너비(2칸)</strong>를 차지하게 하려면 <code>grid-column</code>을 어떻게 지정하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">2열이면 열 라인이 1·2·3 — 세 개.<br>전체 너비를 차지하려면 라인 1부터 라인 3까지:<br><pre>grid-column: 1/3;</pre>또는 start/end 방식:<br><pre>grid-column-start: 1;
+grid-column-end: 3;</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== vw 단위 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-09" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-09">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>grid-template-rows: 40vw 30vw 30vw</code>에서 <code>vw</code> 단위란?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>vw</code> = <strong>viewport width</strong> — 브라우저 창 너비의 1%.<br><code>40vw</code> = 뷰포트 너비의 40%.<br><br>화면 크기에 비례하여 높이가 자동 조정되므로 반응형 이미지 갤러리의 행 높이 지정에 유용.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== object-fit ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-10" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-10">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. Grid 셀 안의 이미지를 셀 크기에 꽉 채우려면 어떤 CSS를 사용하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><pre>.photoGallery li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}</pre><code>object-fit: cover</code>: 비율을 유지하면서 영역을 빈틈없이 채움 (이미지 일부 잘릴 수 있음).<br><code>width/height: 100%</code>: 셀 전체 영역을 차지하도록 설정.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 종합 퀴즈 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-11" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-11">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 포토갤러리에서 아이템 A가 1행 전체(2칸)를 차지하도록 배치하는 CSS를 두 가지 방법으로 써라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>방법 1 (개별 속성):</strong><pre>.item01 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}</pre><strong>방법 2 (단축 표기):</strong><pre>.item01 {
+  grid-row: 1/2;
+  grid-column: 1/3;
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week10-12" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week10-12">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 다음 Grid CSS에서 몇 행 몇 열이 만들어지나?<br><code>grid-template-rows: 175px 175px 290px;</code><br><code>grid-template-columns: 50% 20% 30%;</code></p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">값의 개수가 행·열의 수를 결정.<br><code>grid-template-rows</code>에 값 3개 → <strong>3행</strong> (높이: 175px / 175px / 290px)<br><code>grid-template-columns</code>에 값 3개 → <strong>3열</strong> (너비: 50% / 20% / 30%)<br><br>결과: 3행 × 3열 = 총 9개의 grid cell.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /content -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

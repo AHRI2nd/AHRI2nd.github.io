@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12주차 학습 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/study.css">
+</head>
+<body>
+
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">12주차 학습</span>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week11.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../quiz/week12.html" class="btn-nav btn-nav--accent">퀴즈 풀기 →</a></div>
+      <div></div>
+    </div>
+
+    <div class="study-wrapper">
+
+      <!-- TOC Sidebar -->
+      <aside class="study-toc">
+        <p class="toc-title">목차</p>
+        <ul class="toc-list">
+          <li><a href="#flex-menu">flex 메뉴</a></li>
+          <li><a href="#flex-menu-space">space-between 메뉴</a></li>
+          <li><a href="#hamburger">반응형 햄버거 메뉴</a></li>
+          <li><a href="#two-col">flex 2단편집 (main + aside)</a></li>
+          <li><a href="#transition">전환 (transition)</a></li>
+          <li><a href="#keyframes">애니메이션 (@keyframes)</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="study-content">
+
+        <!-- ===== Section 1: flex 메뉴 ===== -->
+        <section id="flex-menu" class="study-section">
+          <h2 class="study-h2">flex 메뉴 — 가로 내비게이션</h2>
+
+          <p class="study-p"><code>ul</code>·<code>li</code> 목록은 기본적으로 세로로 쌓입니다. 부모인 <code>ul</code>에 <code>display: flex</code>를 주면 <code>li</code> 아이템들이 <strong>가로로 나란히</strong> 배치되어 수평 메뉴가 됩니다.</p>
+
+          <div class="code-block">
+<pre>.navbar { background: green; padding: 12px 16px; }
+.nav-list {
+  display: flex;        /* 가로 방향으로 나란히 배치 */
+  list-style: none;     /* 기본 불릿(•) 제거 */
+  margin: 0;
+  padding: 0;
+}
+.nav-item { margin-right: 16px; }
+.nav-item a {
+  color: white;
+  text-decoration: none;  /* 밑줄 제거 */
+}</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>수평 메뉴의 3요소:</strong>
+            ① <code>ul</code>에 <code>display: flex</code> (가로 배치) ·
+            ② <code>list-style: none</code> (불릿 제거) ·
+            ③ <code>a</code>에 <code>text-decoration: none</code> (밑줄 제거)
+          </div>
+        </section>
+
+        <!-- ===== Section 2: space-between 메뉴 ===== -->
+        <section id="flex-menu-space" class="study-section">
+          <h2 class="study-h2">로고 + 메뉴 양끝 배치</h2>
+
+          <p class="study-p">한쪽에 로고, 반대쪽에 메뉴를 두는 흔한 헤더 패턴입니다. <code>justify-content: space-between</code>으로 양 끝으로 벌리고, <code>align-items: center</code>로 세로 가운데를 맞춥니다.</p>
+
+          <div class="code-block">
+<pre>.nav {
+  display: flex;
+  justify-content: space-between;  /* 좌우 끝으로 벌리기 */
+  align-items: center;             /* 세로 가운데 정렬 */
+  padding: 12px 16px;
+  background-color: green;
+}
+.nav-menu a { margin-left: 16px; }
+
+/* 화면 폭이 640px 이하: 세로로 배치 */
+@media (max-width: 640px) {
+  .nav {
+    flex-direction: column;   /* 로고 아래에 메뉴가 쌓임 */
+    align-items: flex-start;  /* 왼쪽 정렬 */
+  }
+}</pre>
+          </div>
+        </section>
+
+        <!-- ===== Section 3: 햄버거 메뉴 ===== -->
+        <section id="hamburger" class="study-section">
+          <h2 class="study-h2">반응형 햄버거 메뉴</h2>
+
+          <p class="study-p">데스크톱에서는 가로 메뉴를 보이고, 모바일(좁은 화면)에서는 메뉴를 숨긴 뒤 <strong>☰ 햄버거 버튼</strong>으로 펼치는 패턴입니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>요소</th><th>큰 화면 (기본)</th><th>모바일 (≤640px)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>.nav-menu</code></td>
+                <td><code>display: flex</code> (가로 메뉴)</td>
+                <td><code>display: none</code> (숨김)</td>
+              </tr>
+              <tr>
+                <td><code>.nav-toggle</code> (☰)</td>
+                <td><code>display: none</code> (숨김)</td>
+                <td><code>display: block</code> (표시)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+<pre>/* 햄버거 버튼: 기본은 숨김 */
+.nav-toggle { display: none; }
+
+@media (max-width: 640px) {
+  .nav-menu {
+    display: none;             /* 기본 상태: 메뉴 숨김 */
+    flex-direction: column;    /* 펼치면 세로 메뉴 */
+    width: 100%;
+  }
+  .nav-menu.show { display: flex; }  /* 버튼 클릭 후 표시 */
+  .nav-toggle { display: block; }    /* 모바일에서만 ☰ 표시 */
+}</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>참고:</strong> 버튼 클릭으로 <code>.show</code> 클래스를 토글하는 동작은 JavaScript가 필요합니다.
+            CSS만으로 같은 효과를 내려면 숨겨진 <code>checkbox</code> + <code>label</code> + <code>:checked</code> 선택자를 사용합니다.
+          </div>
+        </section>
+
+        <!-- ===== Section 4: 2단편집 ===== -->
+        <section id="two-col" class="study-section">
+          <h2 class="study-h2">flex 2단편집 — main + aside</h2>
+
+          <p class="study-p">본문(<code>main</code>)과 사이드바(<code>aside</code>)를 가로로 나란히 두는 <strong>2단편집</strong> 레이아웃입니다. 두 요소를 감싼 컨테이너에 <code>display: flex</code>를 주면 됩니다.</p>
+
+          <div class="code-block">
+<pre>/* HTML 구조 */
+&lt;div class="wrapper"&gt;
+  &lt;main&gt; ... 본문 ... &lt;/main&gt;
+  &lt;aside&gt; ... 사이드바 ... &lt;/aside&gt;
+&lt;/div&gt;
+
+/* CSS */
+.wrapper {
+  display: flex;
+  gap: 24px;
+}
+main  { flex: 2; }   /* 본문이 더 넓게 (2:1 비율) */
+aside { flex: 1; }   /* 사이드바는 좁게 */</pre>
+          </div>
+
+          <p class="study-p"><code>aside</code> 안에는 보통 카테고리 메뉴, 최근 글 목록 등이 들어갑니다. 목록이 길면 <code>overflow</code>로 스크롤 영역을 만들 수 있습니다.</p>
+
+          <div class="code-block">
+<pre>.recentNav ol {
+  height: 240px;
+  overflow: hidden scroll;  /* 가로 숨김 / 세로 스크롤 */
+}</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>시맨틱 태그:</strong>
+            <code>main</code> = 페이지의 핵심 본문 ·
+            <code>aside</code> = 본문과 직접 관련은 적은 부가 정보(메뉴·광고·관련 글).
+          </div>
+        </section>
+
+        <!-- ===== Section 5: transition ===== -->
+        <section id="transition" class="study-section">
+          <h2 class="study-h2">전환 (transition)</h2>
+
+          <p class="study-p"><code>transition</code>은 속성 값이 바뀔 때 그 변화를 <strong>부드럽게 이어주는</strong> 효과입니다. 시작 값과 끝 값만 지정하면 중간 단계는 브라우저가 자동으로 계산합니다(개발자가 중간 프레임을 직접 제어할 수는 없음).</p>
+
+          <div class="code-block">
+<pre>.box {
+  background: skyblue;
+  transition: background 0.3s, transform 0.3s;
+}
+.box:hover {
+  background: orange;       /* 0.3초에 걸쳐 색이 바뀜 */
+  transform: scale(1.1);    /* 0.3초에 걸쳐 커짐 */
+}</pre>
+          </div>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>구성 값</th><th>의미</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>property</code></td><td>전환을 적용할 속성 (<code>all</code> = 전체)</td></tr>
+              <tr><td><code>duration</code></td><td>전환 시간 (<code>0.3s</code>, <code>300ms</code>)</td></tr>
+              <tr><td><code>timing-function</code></td><td>속도 곡선 (<code>ease</code>, <code>linear</code>, <code>ease-in</code>)</td></tr>
+              <tr><td><code>delay</code></td><td>시작 지연 시간</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ===== Section 6: keyframes ===== -->
+        <section id="keyframes" class="study-section">
+          <h2 class="study-h2">애니메이션 (@keyframes)</h2>
+
+          <p class="study-p"><strong>키 프레임(keyframe)</strong>은 애니메이션 중간 중간의 핵심 장면입니다. 개발자가 키프레임만 작성하면 그 사이의 프레임은 컴퓨터가 자동으로 생성합니다. <code>transition</code>과 달리 <strong>여러 중간 단계</strong>를 직접 제어할 수 있습니다.</p>
+
+          <div class="code-block">
+<pre>/* 1. @keyframes 로 장면 정의 (위치는 %로 지정) */
+@keyframes bounce {
+  from, to { bottom: 0px; }   /* 0% 와 100% */
+  50%      { bottom: 200px; } /* 중간 장면 */
+}
+
+/* 2. 요소에 애니메이션 연결 */
+#ball {
+  position: absolute;
+  animation-name: bounce;            /* 사용할 @keyframes 이름 */
+  animation-duration: 5s;            /* 1회 재생 시간 */
+  animation-iteration-count: infinite; /* 무한 반복 */
+}</pre>
+          </div>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>속성</th><th>역할</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>animation-name</code></td><td>적용할 <code>@keyframes</code> 이름</td></tr>
+              <tr><td><code>animation-duration</code></td><td>한 번 재생되는 시간</td></tr>
+              <tr><td><code>animation-iteration-count</code></td><td>반복 횟수 (<code>infinite</code> = 무한)</td></tr>
+              <tr><td><code>animation-timing-function</code></td><td>속도 곡선 (<code>ease-in</code>, <code>ease-out</code> 등)</td></tr>
+            </tbody>
+          </table>
+
+          <div class="highlight-box">
+            <strong>transition vs @keyframes:</strong>
+            <code>transition</code>은 시작↔끝 2단계 변화에 적합 ·
+            <code>@keyframes</code>는 0%·50%·100% 처럼 <strong>여러 중간 단계</strong>와 반복·무한 재생이 필요할 때 사용.
+          </div>
+
+          <h3 class="study-h3">퀴즈로 복습하기</h3>
+          <a href="../quiz/week12.html" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+          ">12주차 퀴즈 풀기 →</a>
+        </section>
+
+      </main>
+    </div><!-- /study-wrapper -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

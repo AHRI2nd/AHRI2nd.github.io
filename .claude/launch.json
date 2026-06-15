@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "aris-blog",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--dir", "/Users/ahri2nd/Working/ARIS-Blog", "run", "dev"],
+      "port": 4321
+    }
+  ]
+}

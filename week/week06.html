@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6주차 학습 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/study.css">
+</head>
+<body>
+
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">6주차 학습</span>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week05.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../quiz/week06.html" class="btn-nav btn-nav--accent">퀴즈 풀기 →</a></div>
+      <div><a href="week07.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <div class="study-wrapper">
+
+      <!-- TOC Sidebar -->
+      <aside class="study-toc">
+        <p class="toc-title">목차</p>
+        <ul class="toc-list">
+          <li><a href="#css-position">CSS 적용 위치와 우선순위</a></li>
+          <li><a href="#external-css">외부 CSS</a></li>
+          <li><a href="#div-span">div vs span</a></li>
+          <li><a href="#class-id">class vs ID 선택자</a></li>
+          <li><a href="#child-descendant">자식 · 후손 선택자 복습</a></li>
+          <li><a href="#nav-menu">실습: 수평 내비게이션</a></li>
+          <li><a href="#clover">실습: 클로버 이미지</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="study-content">
+
+        <!-- ===== Section 1: CSS 적용 위치와 우선순위 ===== -->
+        <section id="css-position" class="study-section">
+          <h2 class="study-h2">CSS 적용 위치와 우선순위</h2>
+
+          <p class="study-p">CSS를 작성하는 위치는 세 가지이며, <strong>같은 속성이 충돌할 때</strong> 우선순위에 따라 적용됩니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>우선순위</th>
+                <th>종류</th>
+                <th>작성 위치</th>
+                <th>예시</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1위 (가장 강함)</strong></td>
+                <td>인라인 CSS</td>
+                <td>태그 안 <code>style</code> 속성</td>
+                <td><code>&lt;p style="color: yellow;"&gt;</code></td>
+              </tr>
+              <tr>
+                <td>2위</td>
+                <td>내부 CSS</td>
+                <td><code>&lt;head&gt;</code> 안 <code>&lt;style&gt;</code> 태그</td>
+                <td><code>&lt;style&gt; p { color: blue; } &lt;/style&gt;</code></td>
+              </tr>
+              <tr>
+                <td>3위 (가장 약함)</td>
+                <td>외부 CSS</td>
+                <td>별도 .css 파일 연결</td>
+                <td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="highlight-box">
+            <strong>암기법:</strong> 인라인 &gt; 내부 &gt; 외부 — 코드에 가까울수록 우선순위가 높음
+          </div>
+
+        </section>
+
+        <!-- ===== Section 2: 외부 CSS ===== -->
+        <section id="external-css" class="study-section">
+          <h2 class="study-h2">외부 CSS 사용법</h2>
+
+          <p class="study-p">CSS를 별도 파일로 분리하면 여러 HTML 파일에서 공유할 수 있습니다. 실무에서 가장 많이 사용하는 방식입니다.</p>
+
+          <h3 class="study-h3">연결 방법</h3>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">HTML — &lt;head&gt; 안에 추가</p>
+              <div class="code-block">
+<pre>&lt;link rel="stylesheet" href="./css/style.css"&gt;</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">CSS 파일 (./css/style.css)</p>
+              <div class="code-block">
+<pre>@charset "utf-8";
+
+p { color: red; }</pre>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="study-h3">@charset 선언</h3>
+
+          <p class="study-p">외부 CSS 파일 첫 줄에 <code>@charset "utf-8";</code>을 작성하면 한글 등 비ASCII 문자가 깨지지 않습니다.</p>
+
+          <div class="highlight-box">
+            <strong>link 태그 속성:</strong><br>
+            <code>rel="stylesheet"</code> — 연결 파일이 스타일시트임을 명시<br>
+            <code>href="경로"</code> — CSS 파일 경로 (상대경로 사용 권장)
+          </div>
+
+        </section>
+
+        <!-- ===== Section 3: div vs span ===== -->
+        <section id="div-span" class="study-section">
+          <h2 class="study-h2">&lt;div&gt; vs &lt;span&gt;</h2>
+
+          <p class="study-p">두 태그 모두 <strong>의미 없이 그룹화</strong>하는 용도이지만, 블록과 인라인의 차이가 있습니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>태그</th>
+                <th>종류</th>
+                <th>특징</th>
+                <th>주요 용도</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>&lt;div&gt;</code></td>
+                <td>블록 태그</td>
+                <td>가로 전체 차지, 줄바꿈 발생</td>
+                <td>여러 블록 요소를 <strong>묶어서</strong> 레이아웃 구성</td>
+              </tr>
+              <tr>
+                <td><code>&lt;span&gt;</code></td>
+                <td>인라인 태그</td>
+                <td>내용 너비만큼만 차지, 줄바꿈 없음</td>
+                <td>텍스트 <strong>일부에만</strong> 스타일 적용</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">div 사용 예</p>
+              <div class="code-block">
+<pre>&lt;div&gt;
+  &lt;section&gt;
+    &lt;h1&gt;제목&lt;/h1&gt;
+    &lt;p&gt;본문&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">span 사용 예</p>
+              <div class="code-block">
+<pre>&lt;p&gt;
+  텍스트의
+  &lt;span style="color:red;"&gt;일부&lt;/span&gt;
+  입니다.
+&lt;/p&gt;</pre>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ===== Section 4: class vs ID ===== -->
+        <section id="class-id" class="study-section">
+          <h2 class="study-h2">class 선택자 vs ID 선택자</h2>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>class</th>
+                <th>id</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CSS 문법</td>
+                <td><code>.클래스명 { }</code></td>
+                <td><code>#아이디명 { }</code></td>
+              </tr>
+              <tr>
+                <td>HTML 속성</td>
+                <td><code>class="이름"</code></td>
+                <td><code>id="이름"</code></td>
+              </tr>
+              <tr>
+                <td>재사용</td>
+                <td>여러 요소에 <strong>반복 사용 가능</strong></td>
+                <td>페이지 내 <strong>단 하나만</strong> 사용 (유일)</td>
+              </tr>
+              <tr>
+                <td>목적</td>
+                <td>같은 종류 태그를 <strong>하나로 묶음</strong></td>
+                <td>다른 태그와 <strong>구분</strong>하기 위해 사용</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">class 사용</p>
+              <div class="code-block">
+<pre>&lt;ul class="list-bar"&gt;
+  &lt;li&gt;프랑스&lt;/li&gt;
+  &lt;li&gt;이탈리아&lt;/li&gt;
+&lt;/ul&gt;
+
+.list-bar li {
+  display: inline;
+  margin-right: 30px;
+}</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">id 사용</p>
+              <div class="code-block">
+<pre>&lt;img id="spring" src="spring.jpg"&gt;
+&lt;img id="summer" src="summer.jpg"&gt;
+
+#spring {
+  border-radius: 50% 50% 0 50%;
+}
+#summer {
+  border-radius: 50% 50% 50% 0;
+}</pre>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ===== Section 5: 자식·후손 선택자 ===== -->
+        <section id="child-descendant" class="study-section">
+          <h2 class="study-h2">자식 · 후손 선택자 복습</h2>
+
+          <p class="study-p">아래 구조를 기준으로 자식(직접)과 후손(깊이 무관)의 차이를 확인하세요.</p>
+
+          <div class="code-block">
+<pre>&lt;body&gt;
+  &lt;div&gt;
+    &lt;p&gt;div 의 첫 번째 자식&lt;/p&gt;       ← div의 직접 자식
+    &lt;span&gt;div 의 두 번째 자식
+      &lt;p&gt;span 의 자식 / div 의 후손&lt;/p&gt;  ← div의 자손 (손자)
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/body&gt;</pre>
+          </div>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>선택자</th>
+                <th>예시</th>
+                <th>적용 대상</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>자식 선택자 <code>A &gt; B</code></td>
+                <td><code>div &gt; p { color: green; }</code></td>
+                <td>"div 의 첫 번째 자식" p만</td>
+              </tr>
+              <tr>
+                <td>자손 선택자 <code>A B</code></td>
+                <td><code>div p { background: #ff8; }</code></td>
+                <td>div 안 <strong>모든 p</strong> — 손자 포함</td>
+              </tr>
+              <tr>
+                <td>자식 선택자 체이닝</td>
+                <td><code>header &gt; h1 &gt; a { }</code></td>
+                <td>header의 자식 h1의 자식 a만</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="highlight-box">
+            <strong>핵심:</strong> <code>&gt;</code>은 바로 아래 한 단계만, 공백은 깊이에 상관없이 전부
+          </div>
+
+        </section>
+
+        <!-- ===== Section 6: 수평 내비게이션 ===== -->
+        <section id="nav-menu" class="study-section">
+          <h2 class="study-h2">실습: 수평 내비게이션 메뉴</h2>
+
+          <p class="study-p"><code>&lt;li&gt;</code>는 기본적으로 블록 요소라 세로로 나열됩니다. <code>display: inline</code>으로 가로 나열 메뉴를 만들 수 있습니다.</p>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">HTML</p>
+              <div class="code-block">
+<pre>&lt;nav&gt;
+  &lt;ul class="list-bar"&gt;
+    &lt;li&gt;프랑스&lt;/li&gt;
+    &lt;li&gt;이탈리아&lt;/li&gt;
+    &lt;li&gt;캐나다&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">CSS</p>
+              <div class="code-block">
+<pre>nav ul {
+  background-color: #d9fbfd;
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.list-bar li {
+  display: inline;
+  margin-right: 30px;
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="study-h3">4차산업 실습 — 외부 CSS 예시 (./css/style.css)</h3>
+
+          <div class="code-block">
+<pre>@charset "utf-8";
+
+header {
+  width: 1240px;
+  margin: 0 auto 44px;
+}
+
+h1 {
+  padding: 20px 0px 16px;
+  background-color: #eee;
+  text-align: center;
+  border: 1px solid red;
+}
+
+nav ul {
+  background-color: #d9fbfd;
+  border-top: 2px solid #7c5d48;
+  border-bottom: 2px solid #7c5d48;
+  padding: 12px 0px 10px;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 50px;
+  list-style-type: none;
+}
+
+nav ul li a {
+  font-size: 22px;
+  font-weight: bold;
+  color: #7c5d48;
+}
+
+header > h1 > a {   /* 자식 선택자 체이닝 */
+  text-decoration: none;
+}</pre>
+          </div>
+
+        </section>
+
+        <!-- ===== Section 7: 클로버 이미지 ===== -->
+        <section id="clover" class="study-section">
+          <h2 class="study-h2">실습: id 선택자 — 클로버 이미지</h2>
+
+          <p class="study-p"><code>border-radius</code>의 네 값을 방향별로 다르게 주면 사분면 모양 클로버를 만들 수 있습니다. 각 이미지에 고유한 <code>id</code>를 부여해 스타일을 지정합니다.</p>
+
+          <h3 class="study-h3">border-radius 4값 순서</h3>
+
+          <div class="highlight-box">
+            <code>border-radius: 좌상 우상 우하 좌하</code> — 시계방향 순서
+          </div>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">HTML</p>
+              <div class="code-block">
+<pre>&lt;div class="clover"&gt;
+  &lt;img id="spring" src="spring.jpg"&gt;
+  &lt;img id="summer" src="summer.jpg"&gt;
+  &lt;img id="autumn" src="autumn.jpg"&gt;
+  &lt;img id="winter" src="winter.jpg"&gt;
+&lt;/div&gt;</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">CSS</p>
+              <div class="code-block">
+<pre>.clover {
+  display: flex;
+  flex-wrap: wrap;
+  width: 420px;
+  margin: 20px auto;
+}
+
+.clover img {
+  margin: 5px;
+  width: 200px;
+}
+
+#spring { border-radius: 50% 50% 0 50%; }
+#summer { border-radius: 50% 50% 50% 0; }
+#autumn { border-radius: 50% 0  50% 50%; }
+#winter { border-radius: 0  50% 50% 50%; }</pre>
+              </div>
+            </div>
+          </div>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>border-radius 값</th>
+                <th>직각 모서리 위치</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>#spring</code></td>
+                <td><code>50% 50% 0 50%</code></td>
+                <td>우하 (오른쪽 아래)</td>
+              </tr>
+              <tr>
+                <td><code>#summer</code></td>
+                <td><code>50% 50% 50% 0</code></td>
+                <td>좌하 (왼쪽 아래)</td>
+              </tr>
+              <tr>
+                <td><code>#autumn</code></td>
+                <td><code>50% 0 50% 50%</code></td>
+                <td>우상 (오른쪽 위)</td>
+              </tr>
+              <tr>
+                <td><code>#winter</code></td>
+                <td><code>0 50% 50% 50%</code></td>
+                <td>좌상 (왼쪽 위)</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3 class="study-h3">퀴즈로 복습하기</h3>
+          <a href="../quiz/week06.html" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+          ">6주차 퀴즈 풀기 →</a>
+        </section>
+
+      </main>
+    </div><!-- /study-wrapper -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

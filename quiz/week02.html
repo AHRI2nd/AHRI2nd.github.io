@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2주차 퀴즈 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flashcard.css">
+</head>
+<body>
+
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+  <input type="radio"    name="category" id="cat-all"  class="hidden-input" checked>
+  <input type="radio"    name="category" id="cat-html" class="hidden-input">
+
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">2주차 퀴즈</span>
+        </div>
+        <div class="filter-tabs">
+          <label for="cat-all"  class="filter-label">ALL</label>
+          <label for="cat-html" class="filter-label">HTML</label>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+      <div class="progress-section">
+        <span class="progress-text">2주차 · 12 카드</span>
+      </div>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week01.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../week/week02.html" class="btn-nav">학습 내용 보기</a></div>
+      <div><a href="week03.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-grid">
+
+        <!-- ==================== HTML Tags ==================== -->
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-01" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-01">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;p&gt;와 &lt;br&gt;의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><strong>&lt;p&gt;</strong>: 단락 생성, 앞뒤에 자동 여백 추가. 닫는 태그 있음.<br><strong>&lt;br&gt;</strong>: 강제 줄바꿈만. 여백 없음. 빈 요소(닫는 태그 없음).</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-02" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-02">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;strong&gt;과 &lt;b&gt;의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><strong>&lt;strong&gt;</strong>: 의미론적 강조. 스크린 리더가 강조음으로 읽음. SEO에 영향.<br><strong>&lt;b&gt;</strong>: 시각적 굵기만. 의미 없음.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-03" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-03">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;em&gt;과 &lt;i&gt;의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><strong>&lt;em&gt;</strong>: 의미론적 강조 (emphasis). 스크린 리더가 강조하여 읽음.<br><strong>&lt;i&gt;</strong>: 시각적 이탤릭만. 전문 용어, 생각 등 표현에 사용.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-04" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-04">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;img&gt; 태그의 필수 속성과 권장 속성은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><strong>필수</strong>: <code>src</code> — 이미지 파일 경로.<br><strong>권장</strong>: <code>alt</code> — 이미지 로드 실패 시 대체 텍스트 / 스크린 리더 지원.<br><code>width</code> · <code>height</code> — 크기 지정.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-05" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-05">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. 상대 경로에서 ./와 ../의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>./</code>: 현재 파일이 있는 <strong>같은 폴더</strong>. (생략 가능)<br><code>../</code>: <strong>상위 폴더</strong>로 한 단계 이동.<br>예: <code>../images/logo.png</code> → 상위 폴더의 images 폴더 안.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-06" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-06">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;a&gt; 태그의 target 속성 — _self vs _blank?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>target="_self"</code>: 현재 탭에서 페이지 이동 (기본값).<br><code>target="_blank"</code>: 새 탭에서 열기.<br>외부 사이트 링크에는 <strong>_blank</strong>를 주로 사용.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-07" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-07">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. 이미지에 링크를 거는 방법은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>&lt;a&gt;</code> 태그 안에 <code>&lt;img&gt;</code>를 넣는다.<br><code>&lt;a href="url"&gt;&lt;img src="..." alt="..."&gt;&lt;/a&gt;</code><br>이미지 클릭 시 href 경로로 이동.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-08" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-08">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;ul&gt;과 &lt;ol&gt;의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><strong>&lt;ul&gt;</strong> (Unordered List): 순서 없는 목록. 기본 마커 ●.<br><strong>&lt;ol&gt;</strong> (Ordered List): 순서 있는 목록. 기본 마커 1, 2, 3…<br>두 태그 모두 항목은 <code>&lt;li&gt;</code>로 작성.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-09" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-09">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;ol type="A" start="3"&gt;의 출력 결과는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>type="A"</code>: 대문자 알파벳으로 표시.<br><code>start="3"</code>: 세 번째 항목(C)부터 시작.<br>결과: <strong>C, D, E …</strong> 순서로 출력.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-10" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-10">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. dl / dt / dd 태그의 역할은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><strong>&lt;dl&gt;</strong>: 정의 목록 컨테이너 (Definition List).<br><strong>&lt;dt&gt;</strong>: 정의할 용어 (Definition Term).<br><strong>&lt;dd&gt;</strong>: 용어 설명 (Definition Description). 자동 들여쓰기 적용.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-11" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-11">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. 빈 요소(void element)란? 예시 3개는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer">닫는 태그 없이 단독으로 사용하는 요소.<br>내용(content)을 가질 수 없음.<br>예시: <code>&lt;br&gt;</code> <code>&lt;hr&gt;</code> <code>&lt;img&gt;</code></p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week02-12" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week02-12">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;h1&gt;~&lt;h6&gt;은 어떤 순서로 사용해야 하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer">문서 구조에 따라 <strong>순서대로</strong> 사용. h1 → h2 → h3 순.<br>h1은 페이지당 <strong>1개</strong>만 권장 (주제목).<br>숫자를 건너뛰지 않는 것이 접근성 · SEO에 유리.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /content -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

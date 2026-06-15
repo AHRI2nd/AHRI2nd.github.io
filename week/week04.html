@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4주차 학습 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/study.css">
+</head>
+<body>
+
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">4주차 학습</span>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week03.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../quiz/week04.html" class="btn-nav btn-nav--accent">퀴즈 풀기 →</a></div>
+      <div><a href="week05.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <div class="study-wrapper">
+
+      <!-- TOC Sidebar -->
+      <aside class="study-toc">
+        <p class="toc-title">목차</p>
+        <ul class="toc-list">
+          <li><a href="#css-basic">CSS 기초</a></li>
+          <li><a href="#css-selector">CSS 선택자</a></li>
+          <li><a href="#semantic">시맨틱 태그</a></li>
+          <li><a href="#semantic-css">시맨틱 태그 + CSS</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="study-content">
+
+        <!-- ===== Section 1: CSS 기초 ===== -->
+        <section id="css-basic" class="study-section">
+          <h2 class="study-h2">CSS 기초</h2>
+
+          <p class="study-p">CSS(Cascading Style Sheets)는 HTML 문서에 <strong>스타일(색상·크기·레이아웃)</strong>을 적용하는 언어입니다.</p>
+
+          <h3 class="study-h3">CSS 적용 방법 3가지</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>방법</th>
+                <th>위치</th>
+                <th>특징</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>인라인(Inline)</td>
+                <td>HTML 태그의 <code style="font-family:monospace;font-size:.9em">style</code> 속성</td>
+                <td>한 요소에만 적용. 우선순위 가장 높음</td>
+              </tr>
+              <tr>
+                <td>내부(Internal)</td>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;head&gt;</code> 안 <code style="font-family:monospace;font-size:.9em">&lt;style&gt;</code> 태그</td>
+                <td>한 HTML 파일 전체에 적용</td>
+              </tr>
+              <tr>
+                <td>외부(External)</td>
+                <td>별도 <code style="font-family:monospace;font-size:.9em">.css</code> 파일 + <code style="font-family:monospace;font-size:.9em">&lt;link&gt;</code></td>
+                <td>여러 HTML 파일에 공통 적용. 가장 권장</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">CSS 기본 문법 구조</h3>
+
+          <div class="code-block">
+            <span class="code-label">CSS 규칙 구조</span>
+            <pre>선택자 {
+  속성: 값;
+  속성: 값;
+}
+
+/* 예시 */
+h1 {
+  color: red;
+  font-size: 24px;
+}</pre>
+          </div>
+
+          <h3 class="study-h3">예제: 내부 스타일 작성 (커피 전문점)</h3>
+
+          <div class="code-block">
+            <span class="code-label">내부 스타일 — &lt;style&gt; 태그 사용</span>
+            <pre>&lt;head&gt;
+  &lt;style&gt;
+    body { background-color: yellow; }
+    h1   { color: red; }
+    p.first  { color: green; }
+    p.second { color: blue; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to Web Coffee!&lt;/h1&gt;
+  &lt;p class="first"&gt;첫 번째 단락 — 녹색&lt;/p&gt;
+  &lt;p class="second"&gt;두 번째 단락 — 파란색&lt;/p&gt;
+&lt;/body&gt;</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>CSS 주석:</strong> <code style="font-family:monospace;font-size:.9em">/* 내용 */</code> 형식으로 작성합니다.
+            HTML 주석(<code style="font-family:monospace;font-size:.9em">&lt;!-- --&gt;</code>)과 다르므로 혼동하지 마세요.
+          </div>
+        </section>
+
+        <!-- ===== Section 2: CSS 선택자 ===== -->
+        <section id="css-selector" class="study-section">
+          <h2 class="study-h2">CSS 선택자</h2>
+
+          <p class="study-p">선택자(Selector)는 스타일을 적용할 HTML 요소를 지정합니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>선택자 종류</th>
+                <th>문법</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>요소(타입) 선택자</td>
+                <td><code style="font-family:monospace;font-size:.9em">h1 { }</code></td>
+                <td>해당 태그 <strong>전체</strong>에 적용</td>
+              </tr>
+              <tr>
+                <td>클래스 선택자</td>
+                <td><code style="font-family:monospace;font-size:.9em">.classname { }</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">class="classname"</code>인 모든 요소에 적용</td>
+              </tr>
+              <tr>
+                <td>태그+클래스</td>
+                <td><code style="font-family:monospace;font-size:.9em">p.first { }</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;p class="first"&gt;</code>에만 적용</td>
+              </tr>
+              <tr>
+                <td>ID 선택자</td>
+                <td><code style="font-family:monospace;font-size:.9em">#idname { }</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">id="idname"</code>인 요소에 적용. 페이지당 1개</td>
+              </tr>
+              <tr>
+                <td>전체 선택자</td>
+                <td><code style="font-family:monospace;font-size:.9em">* { }</code></td>
+                <td>모든 요소에 적용</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">자주 쓰는 CSS 속성</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>속성</th>
+                <th>예시 값</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">color</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">red</code>, <code style="font-family:monospace;font-size:.9em">#ff0000</code>, <code style="font-family:monospace;font-size:.9em">rgb(255,0,0)</code></td>
+                <td>글자 색상</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">background-color</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">yellow</code>, <code style="font-family:monospace;font-size:.9em">#ddeedd</code></td>
+                <td>배경 색상</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">font-size</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">16px</code>, <code style="font-family:monospace;font-size:.9em">1.2rem</code>, <code style="font-family:monospace;font-size:.9em">120%</code></td>
+                <td>글자 크기</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">text-align</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">left</code>, <code style="font-family:monospace;font-size:.9em">center</code>, <code style="font-family:monospace;font-size:.9em">right</code></td>
+                <td>텍스트 정렬</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">padding</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">0.5rem</code>, <code style="font-family:monospace;font-size:.9em">10px 20px</code></td>
+                <td>안쪽 여백</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">예제: 클래스 선택자</h3>
+
+          <div class="code-compare">
+            <div class="code-block">
+              <span class="code-label">CSS</span>
+              <pre>.mainArea {
+  background-color: yellow;
+}
+.mainArea h1 {
+  color: red;
+}
+.mainArea p.first {
+  color: green;
+}
+.formArea {
+  background-color: #ddeedd;
+}
+footer {
+  background: #949087;
+  text-align: center;
+  padding: 0.5rem;
+}</pre>
+            </div>
+            <div class="code-block">
+              <span class="code-label">HTML</span>
+              <pre>&lt;section class="mainArea"&gt;
+  &lt;h1&gt;제목&lt;/h1&gt;
+  &lt;p class="first"&gt;녹색 단락&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class="formArea"&gt;
+  &lt;!-- 연두색 배경 폼 영역 --&gt;
+&lt;/section&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;하단 정보&lt;/p&gt;
+&lt;/footer&gt;</pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Section 3: 시맨틱 태그 ===== -->
+        <section id="semantic" class="study-section">
+          <h2 class="study-h2">시맨틱 태그</h2>
+
+          <p class="study-p">시맨틱(Semantic) 태그는 태그 이름 자체가 <strong>의미</strong>를 가집니다.
+          검색 엔진(SEO)과 스크린 리더(접근성)가 문서 구조를 올바르게 이해하도록 돕습니다.</p>
+
+          <h3 class="study-h3">시맨틱 태그 vs 비시맨틱 태그</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>예시</th>
+                <th>특징</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>시맨틱 태그</td>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;header&gt;</code>, <code style="font-family:monospace;font-size:.9em">&lt;nav&gt;</code>, <code style="font-family:monospace;font-size:.9em">&lt;main&gt;</code></td>
+                <td>역할과 의미가 명확 → SEO, 접근성 향상</td>
+              </tr>
+              <tr>
+                <td>비시맨틱 태그</td>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;div&gt;</code>, <code style="font-family:monospace;font-size:.9em">&lt;span&gt;</code></td>
+                <td>의미 없음 → 레이아웃·스타일 목적으로만 사용</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">HTML5 시맨틱 태그 7가지</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>태그</th>
+                <th>역할</th>
+                <th>일반적인 내용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;header&gt;</code></td>
+                <td>페이지 또는 섹션의 머리말</td>
+                <td>로고, 사이트 제목, 소개</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;nav&gt;</code></td>
+                <td>내비게이션 링크 모음</td>
+                <td>메뉴, 목차, 페이지 링크</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;main&gt;</code></td>
+                <td>페이지의 주요 콘텐츠</td>
+                <td>본문. 페이지당 <strong>1개</strong>만 사용</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;section&gt;</code></td>
+                <td>관련 콘텐츠의 묶음</td>
+                <td>장(chapter), 탭 패널</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;article&gt;</code></td>
+                <td>독립적으로 배포 가능한 콘텐츠</td>
+                <td>블로그 포스트, 뉴스 기사</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;aside&gt;</code></td>
+                <td>주요 콘텐츠와 간접적으로 관련된 부분</td>
+                <td>사이드바, 광고, 관련 링크</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;footer&gt;</code></td>
+                <td>페이지 또는 섹션의 꼬리말</td>
+                <td>저작권, 연락처, 사이트맵</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">예제: 시맨틱 구조 문서</h3>
+
+          <div class="code-block">
+            <span class="code-label">시맨틱 태그 기본 구조 (ex-semantic-01.html)</span>
+            <pre>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;HTML, CSS, JAVASCRIPT를 이용한 웹 페이지의 작성&lt;/h1&gt;
+    &lt;p&gt;HTML5를 사용하여 웹페이지 작성하는 방법을 학습합니다.&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+    &lt;h2&gt;목차&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#html"&gt;HTML5&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#css"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#js"&gt;JAVASCRIPT&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+
+  &lt;section&gt;
+    &lt;article id="html"&gt;
+      &lt;h2&gt;HTML5&lt;/h2&gt;
+      &lt;p&gt;HTML을 이용하여 문서의 구조와 내용을 기술합니다.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article id="css"&gt;
+      &lt;h2&gt;CSS3&lt;/h2&gt;
+      &lt;p&gt;CSS을 이용하여 문서의 스타일을 기술합니다.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;Author: &lt;a href="mailto:hong@example.com"&gt;hong@example.com&lt;/a&gt;&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>section vs article:</strong>
+            <code style="font-family:monospace;font-size:.9em">&lt;section&gt;</code>은 관련 콘텐츠를 <strong>묶는 컨테이너</strong>(챕터 등).
+            <code style="font-family:monospace;font-size:.9em">&lt;article&gt;</code>은 그 자체로 <strong>독립적인 단위</strong>(블로그 글, 댓글 등).
+            article은 section 안에 중첩될 수 있습니다.
+          </div>
+        </section>
+
+        <!-- ===== Section 4: 시맨틱 태그 + CSS ===== -->
+        <section id="semantic-css" class="study-section">
+          <h2 class="study-h2">시맨틱 태그 + CSS</h2>
+
+          <p class="study-p">시맨틱 태그에 클래스와 CSS를 결합하면 구조와 스타일을 분리하면서도 유지보수가 쉬운 코드를 만들 수 있습니다.</p>
+
+          <h3 class="study-h3">예제: 커피전문점 통합 구조</h3>
+
+          <div class="code-block">
+            <span class="code-label">CSS — 시맨틱 태그에 스타일 적용</span>
+            <pre>&lt;style&gt;
+  .mainArea { background-color: yellow; }
+  .mainArea h1 { color: red; }
+  .mainArea p.first  { color: green; }
+  .mainArea p.second { color: blue; }
+
+  .formArea { background-color: #ddeedd; }
+
+  footer {
+    background: #949087;
+    text-align: center;
+    padding: 0.5rem;
+  }
+&lt;/style&gt;</pre>
+          </div>
+
+          <div class="code-block">
+            <span class="code-label">HTML — 시맨틱 구조</span>
+            <pre>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;구조화 문서&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section class="mainArea"&gt;
+      &lt;!-- CSS 스타일 영역: 노란 배경 --&gt;
+    &lt;/section&gt;
+
+    &lt;section class="menuArea"&gt;
+      &lt;!-- 메뉴 목록 --&gt;
+    &lt;/section&gt;
+
+    &lt;section class="formArea"&gt;
+      &lt;!-- 주문 폼: 연두색 배경 --&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&lt;small&gt;&copy; 시맨틱 태그 연습&lt;/small&gt;&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</pre>
+          </div>
+
+          <h3 class="study-h3">input type="password"</h3>
+          <p class="study-p">3주차에 배운 <code style="font-family:monospace;font-size:.9em">input</code> 태그에 4주차에서 추가된 타입입니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>type 값</th>
+                <th>화면 표시</th>
+                <th>사용 예</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">text</code></td>
+                <td>입력한 글자 그대로 표시</td>
+                <td>이름, 닉네임</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">password</code></td>
+                <td>입력한 글자를 <strong>●●●</strong>로 마스킹</td>
+                <td>비밀번호, 암호</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+            <span class="code-label">password 입력 예시</span>
+            <pre>닉네임: &lt;input type="text"     name="nickname"&gt;&lt;br&gt;
+암호:   &lt;input type="password" name="pw"&gt;</pre>
+          </div>
+
+          <h3 class="study-h3">퀴즈로 복습하기</h3>
+          <a href="../quiz/week04.html" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+          ">4주차 퀴즈 풀기 →</a>
+        </section>
+
+      </main>
+    </div><!-- /study-wrapper -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

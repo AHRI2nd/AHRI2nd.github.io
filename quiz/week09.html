@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9주차 퀴즈 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flashcard.css">
+</head>
+<body>
+
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+  <input type="radio"    name="category" id="cat-all" class="hidden-input" checked>
+  <input type="radio"    name="category" id="cat-css" class="hidden-input">
+
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">9주차 퀴즈</span>
+        </div>
+        <div class="filter-tabs">
+          <label for="cat-all" class="filter-label">ALL</label>
+          <label for="cat-css" class="filter-label">CSS</label>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+      <div class="progress-section">
+        <span class="progress-text">9주차 · 12 카드</span>
+      </div>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week07.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../week/week09.html" class="btn-nav">학습 내용 보기</a></div>
+      <div><a href="week10.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-grid">
+
+        <!-- ==================== 텍스트 CSS ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-01" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-01">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>font-family</code>에 여러 글꼴을 나열하는 이유는? 마지막에 <code>Sans-Serif</code>를 쓰는 이유는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">앞쪽 글꼴부터 차례로 적용하며, 없으면 다음 글꼴을 사용하는 <strong>폴백(fallback)</strong> 방식.<br><pre>font-family: Arial, '맑은 고딕', Sans-Serif;</pre>마지막 <code>Sans-Serif</code>는 브라우저 기본 고딕 계열 글꼴로 최후의 안전망 역할.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-02" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-02">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>font-size: 20px</code>과 <code>font-size: 1.25em</code>의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>px</code>: 화면 픽셀 기준 <strong>절대값</strong>. 항상 같은 크기.<br><code>em</code>: <strong>부모 요소 font-size 기준 배율</strong>. 부모가 16px이면 1.25em = 20px.<br>→ em은 부모 크기에 따라 유동적으로 변해 반응형 설계에 유리.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== text-shadow ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-03" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-03">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>text-shadow: 5px 5px 2px #cccccc</code>의 4개 값이 각각 의미하는 것은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>text-shadow: X Y blur 색상</code><br><strong>1) 5px</strong> — 오른쪽 그림자 길이 (X축)<br><strong>2) 5px</strong> — 아래쪽 그림자 길이 (Y축)<br><strong>3) 2px</strong> — 흐린 정도 (blur radius)<br><strong>4) #cccccc</strong> — 그림자 색상</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== background ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-04" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-04">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. background 속성 5가지(<code>color</code>, <code>image</code>, <code>repeat</code>, <code>position</code>, <code>attachment</code>)의 역할을 설명하라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>background-color</code>: 배경색<br><code>background-image</code>: 배경 이미지 (<code>url('경로')</code>)<br><code>background-repeat</code>: 반복 여부 (<code>no-repeat</code> / <code>repeat-x</code> / <code>repeat-y</code>)<br><code>background-position</code>: 이미지 위치 (<code>right top</code> 등)<br><code>background-attachment</code>: 스크롤 시 고정(<code>fixed</code>) 또는 같이 이동(<code>scroll</code>)</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-05" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-05">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. background 단축 표기법의 값 순서는? <code>no-repeat right top</code>을 포함한 예시를 써라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">순서: <strong>배경색 → 이미지 → 반복 → 위치</strong><br><pre>body {
+  background: #dddddd
+    url('./img/forest.jpg')
+    no-repeat right top;
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== background-size ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-06" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-06">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>background-size: cover</code>와 <code>contain</code>의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>cover</code>: 요소를 <strong>빈틈없이 덮도록</strong> 이미지 확대/축소. 비율 유지, 이미지 일부가 잘릴 수 있음.<br><code>contain</code>: 이미지 <strong>전체가 다 보이도록</strong> 확대/축소. 비율 유지, 요소 안에 여백(빈 공간)이 생길 수 있음.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-07" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-07">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>background-size: auto</code> / <code>50% 50%</code> / <code>150px 120px</code>은 각각 어떻게 동작하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>auto</code>: 원래 이미지 크기 그대로 표시 (기본값)<br><code>50% 50%</code>: 요소 너비/높이의 50%로 표시 (백분율)<br><code>150px 120px</code>: 너비 150px, 높이 120px로 고정 지정<br><br>백분율·px 지정 시 이미지가 반복될 수 있으므로 <code>background-repeat: no-repeat</code>과 함께 사용.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== opacity ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-08" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-08">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>opacity: 0.3</code>과 <code>img:hover { opacity: 0.8; }</code>를 함께 쓰면 어떤 효과가 나타나나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">기본 상태에서 이미지가 30% 불투명(흐릿하게) 표시되고, 마우스를 올리면 80% 불투명(또렷하게) 전환.<br><pre>img { opacity: 0.3; }
+img:hover { opacity: 0.8; }</pre>hover 효과로 이미지 강조나 인터랙션을 표현할 때 자주 사용.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-09" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-09">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>opacity</code>와 <code>rgba()</code>의 alpha 값 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>opacity</code>: 요소 전체(자식·텍스트 포함) 투명도 조절. 값 범위 0~1.<br><code>rgba() alpha</code>: 해당 색상(배경색 등)만 투명 처리. 텍스트는 영향 없음.<br><br>→ 배경만 투명하게 하고 글자는 선명하게 유지하려면 <code>rgba()</code> 사용.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 그라데이션 글자 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-10" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-10">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>linear-gradient(to top, #d299c2 0%, #fef9d7 100%)</code>의 각 값이 의미하는 것은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>to top</code>: 그라데이션 방향 — 아래에서 위로<br><code>#d299c2 0%</code>: 시작 색상 (아래쪽, 0% 위치)<br><code>#fef9d7 100%</code>: 끝 색상 (위쪽, 100% 위치)<br><br>방향은 <code>to right</code> / <code>to bottom</code> / <code>135deg</code> 등도 사용 가능.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-11" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-11">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. CSS로 글자에 그라데이션 색상을 적용하는 3단계 방법은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>1단계:</strong> <code>background-image: linear-gradient(...)</code> 지정<br><strong>2단계:</strong> <code>background-clip: text</code> (+ <code>-webkit-</code> 접두어) — 배경을 글자 모양으로 자르기<br><strong>3단계:</strong> <code>color: transparent</code> — 글자 자체를 투명하게 해서 배경(그라데이션)이 글자처럼 보이게 함</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week09-12" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week09-12">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 그라데이션 글자를 만들 때 <code>-webkit-background-clip</code>을 따로 쓰는 이유는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">크로스 브라우저 호환을 위해 브라우저별 접두어(vendor prefix)를 함께 작성.<br><pre>-webkit-background-clip: text;  /* Chrome, Safari */
+-moz-background-clip: text;     /* Firefox 구버전 */
+background-clip: text;          /* 표준 */</pre>표준 속성이 지원되지 않는 구버전 브라우저에서도 동작하도록 보장.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /content -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

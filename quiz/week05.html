@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5주차 퀴즈 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flashcard.css">
+</head>
+<body>
+
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+  <input type="radio"    name="category" id="cat-all" class="hidden-input" checked>
+  <input type="radio"    name="category" id="cat-css" class="hidden-input">
+
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">5주차 퀴즈</span>
+        </div>
+        <div class="filter-tabs">
+          <label for="cat-all" class="filter-label">ALL</label>
+          <label for="cat-css" class="filter-label">CSS</label>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+      <div class="progress-section">
+        <span class="progress-text">5주차 · 12 카드</span>
+      </div>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week04.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../week/week05.html" class="btn-nav">학습 내용 보기</a></div>
+      <div><a href="week06.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-grid">
+
+        <!-- ==================== CSS 선택자 심화 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-01" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-01">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 자식 선택자(<code>A &gt; B</code>)와 자손 선택자(<code>A B</code>)의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer"><code>A &gt; B</code>: A의 <strong>직접 자식</strong> B만 선택. 한 단계 아래만.<br><code>A B</code>: A 안의 B <strong>전체</strong> 선택. 손자·증손자 등 깊이 무관.<br>예: <code>div &gt; p</code>는 div 바로 아래 p만, <code>div p</code>는 div 안 모든 p.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-02" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-02">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>div &gt; p { color: green; }</code>와 <code>div p { background: #ff8; }</code>를 동시에 적용하면 span 안의 p에는 어떤 스타일이 적용되나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer">span 안의 p는 div의 <strong>직접 자식이 아니므로</strong> <code>div &gt; p</code>의 초록색은 적용되지 않음.<br>하지만 div의 자손이므로 <code>div p</code>의 노란 배경은 <strong>적용됨</strong>.<br>→ 결과: 배경 노란색, 글자 기본색</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-03" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-03">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 인접형제 선택자 <code>A + B</code>란?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer">A 요소 <strong>바로 뒤에 나오는 형제 요소 중 첫 번째</strong> B를 선택.<br>같은 부모를 가진 요소끼리만 형제 관계 성립.<br>예: <code>h2 + p { color: red; }</code> → h2 바로 다음 p만 빨간색.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-04" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-04">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 가상 클래스 선택자란? 자주 쓰이는 예 3가지는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer">요소의 <strong>특정 상태</strong>에만 스타일을 적용하는 선택자.<br><code>:hover</code> — 마우스를 올렸을 때<br><code>:focus</code> — 포커스를 받았을 때 (input 클릭 등)<br><code>:first-child</code> — 부모의 첫 번째 자식일 때</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-05" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-05">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 속성 선택자 <code>A[C]</code>의 의미와 예시는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer"><strong>C 속성을 가진</strong> A 요소를 선택.<br>예: <code>input[type] { border: 1px solid blue; }</code><br>→ type 속성이 있는 모든 input 선택<br><code>a[href] { color: green; }</code><br>→ href 속성이 있는 모든 a 태그 선택</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 가상 요소 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-06" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-06">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>::after</code>와 <code>::before</code> 가상 요소란?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer">HTML 태그 추가 없이 CSS만으로 요소의 앞·뒤에 내용을 삽입.<br><code>::after</code>: 요소 <strong>뒤</strong>에 삽입<br><code>::before</code>: 요소 <strong>앞</strong>에 삽입<br>반드시 <code>content</code> 속성이 있어야 표시됨. (<code>content: ""</code>도 가능)</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-07" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-07">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>.new::after { content: "NEW!"; ... }</code>는 어디에 표시되나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer"><code>class="new"</code>인 요소의 <strong>내용 바로 뒤</strong>에 "NEW!" 텍스트가 삽입됨.<br>HTML 코드를 수정하지 않고 CSS로만 뱃지·아이콘 등을 추가할 수 있음.<br>예: <em>자켓 - 200,000원</em> → <em>자켓 - 200,000원 [NEW!]</em></p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== Box Model 속성 심화 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-08" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-08">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>border-radius</code>란? <code>50%</code>를 주면 어떻게 되나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer">요소의 테두리 <strong>모서리를 둥글게</strong> 처리하는 속성.<br>값이 클수록 더 둥글어짐.<br><code>border-radius: 50%</code> → <strong>정원형</strong> (width = height일 때)<br>특정 모서리만: <code>border-top-left-radius: 20px</code></p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-09" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-09">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>display: block</code>과 <code>display: inline</code>의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer"><strong>block</strong>: 가로 전체 차지, 줄바꿈 발생, width/height 지정 가능.<br>기본 블록 태그: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code><br><strong>inline</strong>: 내용 너비만큼만 차지, 줄바꿈 없음, width/height 무시.<br>기본 인라인 태그: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code></p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-10" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-10">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>list-style: none</code>과 <code>text-decoration: none</code>의 역할은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer"><code>list-style: none</code>: ul/ol의 기본 마커(●, 1.)를 <strong>제거</strong>.<br><code>text-decoration: none</code>: a 태그의 기본 <strong>밑줄 제거</strong>.<br>두 속성 모두 브라우저 기본 스타일을 없애고 직접 디자인할 때 사용.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== CSS Reset & 정렬 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-11" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-11">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. CSS Reset이란? 왜 사용하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer">브라우저마다 기본 margin·padding 값이 달라 레이아웃이 어긋나는 문제를 방지.<br><code>* { margin: 0; padding: 0; }</code><br>전체 선택자(<code>*</code>)로 모든 요소의 여백을 0으로 초기화한 뒤 직접 스타일 지정.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week05-12" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week05-12">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 블록 요소를 수평 가운데 정렬하는 방법은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <p class="answer"><code>width</code>를 지정하고 <code>margin: auto</code>(좌우)를 사용.<br><code>margin: 20px auto</code> → 위·아래 20px, 좌·우 자동 균등 분배<br><code>text-align: center</code>는 <strong>안의 인라인 내용</strong>을 정렬하는 것이며, 블록 자체 이동은 margin: auto로 해야 함.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /content -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

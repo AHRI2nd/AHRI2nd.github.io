@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6주차 퀴즈 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flashcard.css">
+</head>
+<body>
+
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+  <input type="radio"    name="category" id="cat-all" class="hidden-input" checked>
+  <input type="radio"    name="category" id="cat-css" class="hidden-input">
+
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">6주차 퀴즈</span>
+        </div>
+        <div class="filter-tabs">
+          <label for="cat-all" class="filter-label">ALL</label>
+          <label for="cat-css" class="filter-label">CSS</label>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+      <div class="progress-section">
+        <span class="progress-text">6주차 · 12 카드</span>
+      </div>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week05.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../week/week06.html" class="btn-nav">학습 내용 보기</a></div>
+      <div><a href="week07.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-grid">
+
+        <!-- ==================== CSS 적용 위치와 우선순위 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-01" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-01">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. CSS 적용 위치 3가지와 우선순위 순서는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>1위 (가장 강함)</strong> 인라인 CSS: <code>&lt;p style="color: yellow;"&gt;</code><br><strong>2위</strong> 내부 CSS: <code>&lt;style&gt; p { color: blue; } &lt;/style&gt;</code><br><strong>3위</strong> 외부 CSS: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code><br>→ 코드에 가까울수록 우선순위가 높음</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-02" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-02">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 외부 CSS를 HTML에 연결하는 방법은? 파일 첫 줄에 써야 하는 선언은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">HTML <code>&lt;head&gt;</code> 안에:<br><code>&lt;link rel="stylesheet" href="./css/style.css"&gt;</code><br><br>CSS 파일 첫 줄:<br><code>@charset "utf-8";</code><br>→ 한글 등 비ASCII 문자 깨짐 방지</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== div vs span ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-03" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-03">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>&lt;div&gt;</code>와 <code>&lt;span&gt;</code>의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>&lt;div&gt;</code>: <strong>블록 태그</strong> — 가로 전체 차지, 줄바꿈 발생. 여러 블록 요소를 그룹화할 때 사용.<br><code>&lt;span&gt;</code>: <strong>인라인 태그</strong> — 내용 너비만큼만 차지, 줄바꿈 없음. 텍스트 일부에 스타일 적용할 때 사용.<br>두 태그 모두 의미를 갖지 않음.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== class vs ID ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-04" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-04">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. class 선택자와 ID 선택자의 차이점은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>class</strong> (<code>.클래스명</code>): 같은 종류 태그를 하나로 묶음. <strong>여러 요소에 반복 사용 가능</strong>.<br><strong>id</strong> (<code>#아이디명</code>): 다른 태그와 구분. <strong>페이지 내 유일</strong>해야 함.<br>→ 공통 스타일은 class, 고유 요소 지정은 id</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-05" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-05">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 자손 선택자 <code>nav ul</code>과 자식 선택자 <code>header &gt; h1 &gt; a</code>의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>nav ul</code>: nav 안의 <strong>모든 ul</strong> 선택 (깊이 무관한 자손)<br><code>header &gt; h1 &gt; a</code>: header의 직접 자식 h1의 직접 자식 a만 선택<br>→ <code>&gt;</code>를 체이닝하면 정확한 계층 경로 지정 가능</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 수평 내비게이션 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-06" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-06">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>&lt;li&gt;</code> 목록을 세로가 아닌 가로(수평)로 나열하려면?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>li { display: inline; }</code>로 블록에서 인라인으로 변경.<br><code>margin-right</code>로 항목 사이 간격 지정.<br><pre>.list-bar li {
+  display: inline;
+  margin-right: 30px;
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-07" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-07">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>nav ul li</code>와 <code>.list-bar li</code>의 차이는? 언제 class를 사용하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>nav ul li</code>: nav 안 모든 ul 안의 모든 li에 적용 (자손 선택자)<br><code>.list-bar li</code>: class="list-bar"인 요소 안의 li만 적용<br>→ 같은 페이지에 여러 목록이 있을 때 class로 구분하면 특정 목록에만 스타일 적용 가능</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 외부 CSS 실습 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-08" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-08">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>list-style-type: none</code>은 언제 쓰나? <code>display: inline</code>과 함께 써야 하는 이유는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>list-style-type: none</code>: ul/li의 기본 마커(●)를 제거.<br><code>display: inline</code>은 li를 가로 나열하지만, 마커는 여전히 남아 있음.<br>→ 수평 메뉴를 깔끔하게 만들려면 두 속성을 함께 사용.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-09" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-09">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>text-align: center</code>로 내비게이션 메뉴를 가운데 정렬할 때 적용 대상은 ul인가, li인가?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>nav ul { text-align: center; }</code>처럼 <strong>ul에 적용</strong>.<br><code>text-align</code>은 블록 요소 안의 인라인 콘텐츠를 정렬하므로, <code>display: inline</code>이 된 li들이 ul 내에서 가운데 정렬됨.<br>li에 직접 적용하면 각 li의 텍스트만 가운데 정렬됨.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 클로버 이미지 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-10" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-10">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>border-radius: 50% 50% 0 50%</code>의 네 값이 의미하는 모서리 순서는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">시계방향: <strong>좌상 → 우상 → 우하 → 좌하</strong><br><code>50% 50% 0 50%</code> → 좌상·우상·좌하는 50% 둥글게, 우하만 직각(0)<br>→ 오른쪽 아래 모서리만 직각인 잎사귀 모양</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-11" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-11">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 클로버 이미지에서 4개 이미지 각각에 고유 id를 부여하는 이유는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">각 이미지마다 <code>border-radius</code> 방향이 달라야 클로버 모양이 됨.<br>class는 동일한 스타일을 묶을 때 사용하고, <strong>개별 스타일은 id로 구분</strong>.<br>공통 스타일(<code>width, margin</code>)은 <code>.clover img</code> class 선택자로, 각 방향은 <code>#spring</code> 등 id로 지정.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week06-12" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week06-12">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>display: flex; flex-wrap: wrap;</code>으로 이미지를 2×2로 배치할 때 각 이미지 너비는 어떻게 설정해야 하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">컨테이너 너비의 절반보다 작게 설정해야 한 행에 2개가 들어감.<br>예: 컨테이너 <code>width: 420px</code>이면 이미지 <code>width: 200px</code> (+ margin 5px 양쪽 = 210px × 2 = 420px)<br><code>flex-wrap: wrap</code>으로 넘치면 다음 줄로 자동 이동.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /content -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

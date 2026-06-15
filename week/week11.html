@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11주차 학습 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/study.css">
+</head>
+<body>
+
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">11주차 학습</span>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week10.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../quiz/week11.html" class="btn-nav btn-nav--accent">퀴즈 풀기 →</a></div>
+      <div></div>
+    </div>
+
+    <div class="study-wrapper">
+
+      <!-- TOC Sidebar -->
+      <aside class="study-toc">
+        <p class="toc-title">목차</p>
+        <ul class="toc-list">
+          <li><a href="#flex-intro">Flexbox 개요</a></li>
+          <li><a href="#flex-container">컨테이너 속성</a></li>
+          <li><a href="#flex-item">아이템 속성</a></li>
+          <li><a href="#flex-shorthand">flex 단축 속성</a></li>
+          <li><a href="#media-query">반응형 @media</a></li>
+          <li><a href="#responsive-card">반응형 카드 예제</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="study-content">
+
+        <!-- ===== Section 1: Flexbox 개요 ===== -->
+        <section id="flex-intro" class="study-section">
+          <h2 class="study-h2">Flexbox 개요</h2>
+
+          <p class="study-p">Flexbox는 <strong>가로 행 또는 세로 열의 한 방향</strong>으로 아이템을 나열하는 1차원 레이아웃 시스템입니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>구성 요소</th><th>역할</th><th>CSS</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>flex container</strong></td>
+                <td>플렉스 컨테이너 — 부모 요소</td>
+                <td><code>display: flex</code></td>
+              </tr>
+              <tr>
+                <td><strong>flex item</strong></td>
+                <td>플렉스 아이템 — 자식 요소</td>
+                <td>자동으로 아이템이 됨</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+<pre>/* HTML */
+&lt;div class="container"&gt;
+  &lt;div class="item"&gt;&lt;p&gt;설명1&lt;/p&gt;&lt;/div&gt;
+  &lt;div class="item"&gt;&lt;p&gt;설명2&lt;/p&gt;&lt;/div&gt;
+  &lt;div class="item"&gt;&lt;p&gt;설명3&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.item {
+  flex: 1;
+  padding: 30px;
+}</pre>
+          </div>
+
+        </section>
+
+        <!-- ===== Section 2: 컨테이너 속성 ===== -->
+        <section id="flex-container" class="study-section">
+          <h2 class="study-h2">컨테이너 속성</h2>
+
+          <p class="study-p">부모 요소(컨테이너)에 지정하는 속성입니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>속성</th><th>역할</th><th>주요 값</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>flex-direction</code></td>
+                <td>배치 방향</td>
+                <td><code>row</code>(가로, 기본) / <code>column</code>(세로)</td>
+              </tr>
+              <tr>
+                <td><code>flex-wrap</code></td>
+                <td>줄넘김 처리</td>
+                <td><code>nowrap</code>(기본, 한줄) / <code>wrap</code>(줄바꿈 허용)</td>
+              </tr>
+              <tr>
+                <td><code>gap</code></td>
+                <td>아이템 사이 여백</td>
+                <td><code>20px</code> / <code>10px 20px</code> (행·열 각각)</td>
+              </tr>
+              <tr>
+                <td><code>justify-content</code></td>
+                <td>메인축 방향 정렬</td>
+                <td><code>flex-start</code> / <code>center</code> / <code>space-between</code> / <code>space-around</code></td>
+              </tr>
+              <tr>
+                <td><code>align-items</code></td>
+                <td>수직축 방향 정렬</td>
+                <td><code>stretch</code>(기본) / <code>center</code> / <code>flex-start</code> / <code>flex-end</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="highlight-box">
+            <strong>메인축 vs 수직축:</strong><br>
+            <code>flex-direction: row</code>일 때 — 메인축 = 가로, 수직축 = 세로<br>
+            <code>flex-direction: column</code>일 때 — 메인축 = 세로, 수직축 = 가로<br>
+            → <code>justify-content</code>는 메인축, <code>align-items</code>는 수직축 정렬
+          </div>
+
+        </section>
+
+        <!-- ===== Section 3: 아이템 속성 ===== -->
+        <section id="flex-item" class="study-section">
+          <h2 class="study-h2">아이템 속성</h2>
+
+          <p class="study-p">자식 요소(아이템)에 지정하는 속성입니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>속성</th><th>역할</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>flex-basis</code></td>
+                <td>아이템 기본 크기 설정 (<code>row</code>일 때 너비 / <code>column</code>일 때 높이)</td>
+              </tr>
+              <tr>
+                <td><code>flex-grow</code></td>
+                <td>남은 공간을 얼마나 차지할지 비율 (0이면 늘어나지 않음)</td>
+              </tr>
+              <tr>
+                <td><code>flex-shrink</code></td>
+                <td>공간이 부족할 때 얼마나 줄어들지 비율 (0이면 줄어들지 않음)</td>
+              </tr>
+              <tr>
+                <td><code>order</code></td>
+                <td>배치 순서 — 숫자가 작을수록 먼저 배치 (기본값: 0)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3"><code>flex-basis</code> vs <code>width</code> 차이</h3>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">flex-basis: 100px</p>
+              <div class="code-block">
+<pre>.item {
+  flex-basis: 100px;
+}
+/* 100px 미만은 늘어나고,
+   100px 초과는 그대로 유지 */</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">width: 100px</p>
+              <div class="code-block">
+<pre>.item {
+  width: 100px;
+}
+/* 100px 초과하는 것도
+   100px에 맞춰 고정 */</pre>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ===== Section 4: flex 단축 속성 ===== -->
+        <section id="flex-shorthand" class="study-section">
+          <h2 class="study-h2">flex 단축 속성</h2>
+
+          <p class="study-p"><code>flex</code>는 <code>flex-grow</code>, <code>flex-shrink</code>, <code>flex-basis</code>를 한 번에 지정하는 단축 속성입니다.</p>
+
+          <div class="code-block">
+<pre>.item { flex: 1; }
+/* = flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
+
+.item { flex: 1 1 auto; }
+/* = flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
+
+.item { flex: 0 0 100%; }
+/* grow·shrink 없이 기본 크기 100% 고정 (반응형 카드에서 자주 사용) */
+
+.item { flex: 0 0 calc(50% - 10px); }
+/* 2열 카드 레이아웃: 50% - 간격 보정 */</pre>
+          </div>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>값</th><th>grow</th><th>shrink</th><th>basis</th><th>의미</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>flex: 1</code></td>
+                <td>1</td><td>1</td><td>0%</td>
+                <td>균등 분배 (가장 자주 사용)</td>
+              </tr>
+              <tr>
+                <td><code>flex: 1 1 auto</code></td>
+                <td>1</td><td>1</td><td>auto</td>
+                <td>내용 크기 기준으로 유연하게</td>
+              </tr>
+              <tr>
+                <td><code>flex: 0 0 100%</code></td>
+                <td>0</td><td>0</td><td>100%</td>
+                <td>고정 너비 (모바일 1열 카드)</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <!-- ===== Section 5: 반응형 @media ===== -->
+        <section id="media-query" class="study-section">
+          <h2 class="study-h2">반응형 @media 쿼리</h2>
+
+          <p class="study-p">화면 크기에 따라 다른 CSS를 적용하는 기법입니다. <strong>모바일 퍼스트(Mobile First)</strong> 방식은 기본 스타일을 모바일로 작성하고, <code>min-width</code>로 화면이 커질 때 스타일을 추가합니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>미디어 쿼리</th><th>적용 조건</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>@media (min-width: 600px)</code></td>
+                <td>뷰포트 너비가 600px <strong>이상</strong>일 때 (태블릿·데스크탑)</td>
+              </tr>
+              <tr>
+                <td><code>@media (min-width: 768px)</code></td>
+                <td>뷰포트 너비가 768px 이상일 때</td>
+              </tr>
+              <tr>
+                <td><code>@media (min-width: 1024px)</code></td>
+                <td>뷰포트 너비가 1024px 이상일 때 (데스크탑)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+<pre>/* 기본 (모바일): 세로 방향 */
+.flex_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 600px 이상 (데스크탑): 가로 방향으로 전환 */
+@media (min-width: 600px) {
+  .flex_box {
+    flex-direction: row;
+    gap: 50px;
+  }
+  .flex_item img {
+    width: 100%;
+  }
+}</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>Mobile First 핵심:</strong> 기본 CSS = 모바일 레이아웃 → <code>@media (min-width: ...)</code>로 큰 화면 스타일 추가.<br>
+            반대로 <code>max-width</code>를 쓰면 Desktop First(데스크탑 기준).
+          </div>
+
+        </section>
+
+        <!-- ===== Section 6: 반응형 카드 예제 ===== -->
+        <section id="responsive-card" class="study-section">
+          <h2 class="study-h2">반응형 카드 레이아웃 예제</h2>
+
+          <p class="study-p">화면 크기에 따라 1열 → 2열 → 4열로 자동 전환되는 카드 레이아웃입니다.</p>
+
+          <div class="code-block">
+<pre>/* 공통 리셋 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+/* 카드 리스트: flex + 줄바꿈 허용 */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* 기본 (모바일): 1열 — 100% */
+.card {
+  flex: 0 0 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* 이미지 꽉 채우기 */
+.card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  height: 300px;
+}
+
+/* 768px 이상: 2열 */
+@media (min-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 10px);  /* 2개 × 50% - gap 보정 */
+  }
+}
+
+/* 1024px 이상: 4열 */
+@media (min-width: 1024px) {
+  .card {
+    flex: 0 0 calc(25% - 15px);  /* 4개 × 25% - gap 보정 */
+  }
+}</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>gap 보정 공식:</strong> gap이 <code>20px</code>이고 n열일 때<br>
+            2열: <code>calc(50% - 10px)</code> → gap(20px) ÷ 2 = 10px<br>
+            4열: <code>calc(25% - 15px)</code> → gap(20px) × 3 ÷ 4 = 15px
+          </div>
+
+
+          <h3 class="study-h3">퀴즈로 복습하기</h3>
+          <a href="../quiz/week11.html" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+          ">11주차 퀴즈 풀기 →</a>
+        </section>
+
+      </main>
+    </div><!-- /study-wrapper -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

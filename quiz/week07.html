@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7주차 퀴즈 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flashcard.css">
+</head>
+<body>
+
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+  <input type="radio"    name="category" id="cat-all" class="hidden-input" checked>
+  <input type="radio"    name="category" id="cat-css" class="hidden-input">
+
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">7주차 퀴즈</span>
+        </div>
+        <div class="filter-tabs">
+          <label for="cat-all" class="filter-label">ALL</label>
+          <label for="cat-css" class="filter-label">CSS</label>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+      <div class="progress-section">
+        <span class="progress-text">7주차 · 12 카드</span>
+      </div>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week06.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../week/week07.html" class="btn-nav">학습 내용 보기</a></div>
+      <div><a href="week09.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-grid">
+
+        <!-- ==================== 수평 메뉴 심화 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-01" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-01">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 수평 메뉴에서 <code>letter-spacing</code>과 <code>border-top</code> / <code>border-bottom</code>은 각각 어떤 역할을 하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>letter-spacing</code>: 글자 사이 간격을 넓혀 메뉴 텍스트에 여유를 줌.<br><code>border-top / border-bottom</code>: ul의 위아래에 구분선을 추가해 메뉴 영역을 시각적으로 구분.<br><pre>ul {
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  padding: 10px 0;
+}
+ul li { display: inline; letter-spacing: 10px; }</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-02" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-02">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 수평 메뉴 링크(<code>a</code>)의 기본 밑줄을 제거하고, 마우스를 올렸을 때 밑줄이 나타나게 하려면?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><pre>ul li a {
+  text-decoration: none;   /* 기본 밑줄 제거 */
+  color: black;
+}
+ul li a:hover {
+  text-decoration: underline;  /* hover 시 밑줄 */
+}</pre>
+              <code>text-decoration: none</code>으로 기본 밑줄을 없애고, <code>:hover</code>에서 다시 추가.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== LVHA ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-03" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-03">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 링크 상태 선택자 4가지(LVHA)를 순서대로 나열하고 각 상태를 설명하라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>L</strong> <code>a:link</code> — 방문한 적 없는 기본 링크<br><strong>V</strong> <code>a:visited</code> — 방문한 적 있는 링크<br><strong>H</strong> <code>a:hover</code> — 마우스를 올렸을 때<br><strong>A</strong> <code>a:active</code> — 클릭하는 순간<br><br>암기: <strong>LoVe HAte</strong></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-04" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-04">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. LVHA 순서를 지키지 않으면 어떤 문제가 생기나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">CSS는 위에서 아래로 적용되므로, 나중에 선언된 규칙이 앞 규칙을 덮어씀.<br><code>:hover</code>를 <code>:visited</code> 앞에 쓰면 방문 후 hover 스타일이 visited에 덮여 동작하지 않음.<br>→ 반드시 <strong>L → V → H → A</strong> 순서로 작성해야 함.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== rgb / rgba ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-05" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-05">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>rgb()</code>와 <code>rgba()</code>의 차이는? alpha 값의 범위와 의미는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>rgb(R, G, B)</code>: 각 채널 0~255 정수, 불투명.<br><code>rgba(R, G, B, alpha)</code>: R·G·B에 <strong>투명도</strong> 추가.<br>alpha 범위: <code>0</code>(완전 투명) ~ <code>1</code>(완전 불투명)<br><code>rgba(0, 0, 255, 0.5)</code> → 50% 투명 파란색, 배경이 비쳐 보임.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-06" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-06">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. CSS 색상 표기법 3가지(키워드·16진수·rgb/rgba)를 각각 예시와 함께 설명하라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>키워드:</strong> <code>yellow</code>, <code>hotpink</code> — CSS 미리 정의된 색상 이름<br><strong>16진수:</strong> <code>#ff0000</code> — R·G·B 각 2자리 16진수<br><strong>rgb():</strong> <code>rgb(255, 0, 0)</code> — R·G·B 각 0~255<br><strong>rgba():</strong> <code>rgba(255, 0, 0, 0.5)</code> — rgb + 투명도</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== border 심화 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-07" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-07">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>border</code> 단축 표기 형식은? 방향별로 지정하는 속성 4가지는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">단축 표기: <code>border: 두께 스타일 색상;</code><br>예: <code>border: 5px solid #00FFFF;</code><br><br>방향별:<br><code>border-top</code> / <code>border-bottom</code> / <code>border-left</code> / <code>border-right</code><br>예: <code>border-top: 1px solid red;</code></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-08" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-08">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. border 스타일 4가지(<code>solid</code>, <code>double</code>, <code>dotted</code>, <code>dashed</code>)의 모양을 설명하라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>solid</code>: 실선 ─────<br><code>double</code>: 이중선 ═════<br><code>dotted</code>: 점선 · · · · ·<br><code>dashed</code>: 파선 - - - - -<br><br>예: <code>border: double 5px #00ff00;</code></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== padding vs margin ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-09" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-09">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>padding</code>과 <code>margin</code>의 위치 차이는? 배경색과의 관계는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>padding</code>: 테두리 <strong>안</strong>쪽 여백 — 배경색이 padding 영역까지 채워짐.<br><code>margin</code>: 테두리 <strong>바깥</strong>쪽 여백 — 다른 요소와의 거리, 배경색 없음.<br><br>즉 padding은 요소의 내부 공간, margin은 요소 간의 외부 공간.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-10" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-10">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>padding: 10px 20px 30px 40px</code>에서 각 값이 의미하는 방향은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">4값 단축 표기 — <strong>시계방향</strong>:<br>위(top) → 오른쪽(right) → 아래(bottom) → 왼쪽(left)<br><br><code>padding: 10px 20px 30px 40px</code><br>→ 위10 / 오른20 / 아래30 / 왼40<br><br><code>margin</code>도 동일한 순서 적용.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== box-sizing ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-11" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-11">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>box-sizing: content-box</code>와 <code>border-box</code>의 차이는? <code>width: 300px; border: 10px; padding: 50px</code>일 때 실제 너비는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>content-box</code>(기본): width = <strong>콘텐츠</strong> 크기. padding·border가 추가되면 전체 커짐.<br>→ 300(content) + 20(border) + 100(padding) = <strong>420px</strong><br><br><code>border-box</code>: width = <strong>테두리 포함</strong> 전체 크기 고정.<br>→ 전체 <strong>300px</strong> 유지. content = 300 - 20 - 100 = 180px</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 블록 vs 인라인 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week07-12" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week07-12">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 블록·인라인·인라인블록 요소의 너비, 줄바꿈, width/height 지정 가능 여부를 비교하라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>블록</strong>(<code>div, p, h1, ul, li</code>): 가로 전체, 줄바꿈 O, width·height·margin 모두 적용됨.<br><strong>인라인</strong>(<code>span, a, strong</code>): 내용 너비, 줄바꿈 X, width·height·margin 위아래 <strong>무시됨</strong>.<br><strong>인라인블록</strong>(<code>img, button</code>): 내용 너비, 줄바꿈 X, width·height·margin 모두 적용됨.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /content -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

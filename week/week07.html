@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7주차 학습 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/study.css">
+</head>
+<body>
+
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">7주차 학습</span>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week06.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../quiz/week07.html" class="btn-nav btn-nav--accent">퀴즈 풀기 →</a></div>
+      <div><a href="week09.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <div class="study-wrapper">
+
+      <!-- TOC Sidebar -->
+      <aside class="study-toc">
+        <p class="toc-title">목차</p>
+        <ul class="toc-list">
+          <li><a href="#nav-menu">수평 메뉴 스타일링 심화</a></li>
+          <li><a href="#link-pseudo">링크 반응 선택자 (LVHA)</a></li>
+          <li><a href="#rgba">배경색 · rgb / rgba</a></li>
+          <li><a href="#border">border 심화</a></li>
+          <li><a href="#padding-margin">padding vs margin</a></li>
+          <li><a href="#box-sizing">box-sizing</a></li>
+          <li><a href="#block-inline">블록 vs 인라인</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="study-content">
+
+        <!-- ===== Section 1: 수평 메뉴 스타일링 심화 ===== -->
+        <section id="nav-menu" class="study-section">
+          <h2 class="study-h2">수평 메뉴 스타일링 심화</h2>
+
+          <p class="study-p">6주차에서 <code>display: inline</code>으로 수평 메뉴를 만들었습니다. 7주차에서는 테두리 선과 글자 간격을 추가해 완성도를 높입니다.</p>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">HTML</p>
+              <div class="code-block">
+<pre>&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+            </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">CSS</p>
+              <div class="code-block">
+<pre>ul {
+  list-style: none;
+  text-align: center;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  padding: 10px 0;
+}
+
+ul li {
+  display: inline;
+  padding: 0 10px;
+  letter-spacing: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="study-h3">주요 속성 설명</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>속성</th><th>값 예시</th><th>설명</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>letter-spacing</code></td>
+                <td><code>10px</code></td>
+                <td>글자 사이 간격. 메뉴 항목 내 글자를 넓게 배치할 때 사용.</td>
+              </tr>
+              <tr>
+                <td><code>border-top</code></td>
+                <td><code>1px solid red</code></td>
+                <td>위쪽 테두리만 지정. <code>border-bottom</code>·<code>border-left</code>·<code>border-right</code>도 같은 방식.</td>
+              </tr>
+              <tr>
+                <td><code>padding: 10px 0</code></td>
+                <td>—</td>
+                <td>위·아래 10px, 좌·우 0. 내비게이션 상하 여백.</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <!-- ===== Section 2: 링크 반응 선택자 LVHA ===== -->
+        <section id="link-pseudo" class="study-section">
+          <h2 class="study-h2">링크 반응 선택자 (LVHA 순서)</h2>
+
+          <p class="study-p">링크 상태에 따라 스타일을 다르게 적용할 수 있습니다. <strong>반드시 LVHA 순서</strong>로 작성해야 제대로 동작합니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>선택자</th><th>상태</th><th>설명</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>a:link</code></td>
+                <td>Link</td>
+                <td>방문한 적 없는 <strong>기본 링크</strong></td>
+              </tr>
+              <tr>
+                <td><code>a:visited</code></td>
+                <td>Visited</td>
+                <td><strong>방문한 적 있는</strong> 링크</td>
+              </tr>
+              <tr>
+                <td><code>a:hover</code></td>
+                <td>Hover</td>
+                <td><strong>마우스를 올렸을 때</strong></td>
+              </tr>
+              <tr>
+                <td><code>a:active</code></td>
+                <td>Active</td>
+                <td><strong>클릭하는 순간</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+<pre>/* LVHA 순서 — 이 순서를 지켜야 함 */
+a:link    { color: red; }
+a:visited { color: green; }
+a:hover   { color: chartreuse; background-color: hotpink; }
+a:active  { color: darkmagenta; }
+
+/* 실무에서 자주 쓰는 패턴 */
+a:link, a:visited { text-decoration: none; }
+a:hover           { text-decoration: underline; }</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>암기법: LoVe HAte</strong> — <code>:link</code> → <code>:visited</code> → <code>:hover</code> → <code>:active</code><br>
+            순서를 어기면 hover나 active가 visited에 덮여서 동작하지 않을 수 있음.
+          </div>
+
+        </section>
+
+        <!-- ===== Section 3: 배경색 rgb / rgba ===== -->
+        <section id="rgba" class="study-section">
+          <h2 class="study-h2">배경색 · rgb / rgba</h2>
+
+          <p class="study-p">CSS3에서는 색상을 <code>rgb()</code>와 <code>rgba()</code> 함수로 지정할 수 있습니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>표기법</th><th>형식</th><th>설명</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>키워드</td>
+                <td><code>yellow</code>, <code>hotpink</code></td>
+                <td>CSS 미리 정의된 색상 이름</td>
+              </tr>
+              <tr>
+                <td>16진수</td>
+                <td><code>#ff0000</code></td>
+                <td>R·G·B 각 2자리 16진수</td>
+              </tr>
+              <tr>
+                <td><code>rgb()</code></td>
+                <td><code>rgb(255, 0, 0)</code></td>
+                <td>R·G·B 각 0~255 정수</td>
+              </tr>
+              <tr>
+                <td><code>rgba()</code></td>
+                <td><code>rgba(255, 0, 0, 0.5)</code></td>
+                <td>R·G·B + <strong>투명도(alpha)</strong> 0~1</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+<pre>body {
+  background-color: rgb(255, 255, 0);    /* 노란색 */
+  /* 또는: background-color: yellow; */
+}
+
+#button {
+  background-color: rgba(0, 0, 255, 0.5);  /* 반투명 파란색 */
+}
+
+#button:hover {
+  background-color: rgba(0, 0, 255, 0.7);  /* hover 시 더 진하게 */
+}</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>alpha 값:</strong> <code>0</code> = 완전 투명, <code>1</code> = 완전 불투명<br>
+            <code>0.5</code>는 50% 투명 — 배경이 비쳐 보임
+          </div>
+
+        </section>
+
+        <!-- ===== Section 4: border 심화 ===== -->
+        <section id="border" class="study-section">
+          <h2 class="study-h2">border 심화</h2>
+
+          <h3 class="study-h3">border 단축 표기</h3>
+
+          <div class="code-block">
+<pre>border: 두께 스타일 색상;
+
+/* 예시 */
+border: 5px solid #00FFFF;   /* 전체 테두리 */
+border-top: 1px solid red;    /* 위쪽만 */
+border-bottom: 1px solid red; /* 아래쪽만 */
+border-left: 3px solid blue;  /* 왼쪽만 */
+border-right: 3px solid blue; /* 오른쪽만 */</pre>
+          </div>
+
+          <h3 class="study-h3">border 스타일 종류</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>스타일 값</th><th>모양</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>solid</code></td><td>실선 ─────</td></tr>
+              <tr><td><code>double</code></td><td>이중선 ═════</td></tr>
+              <tr><td><code>dotted</code></td><td>점선 · · · · ·</td></tr>
+              <tr><td><code>dashed</code></td><td>파선 - - - - -</td></tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+<pre>#border1 { border: solid 1px #ff0000; }         /* 빨간 실선 */
+#border2 { border: double 5px #00ff00; }        /* 초록 이중선 */
+#border3 {
+  border-top: dotted 1px #0000ff;               /* 위 점선 */
+  border-bottom: dashed 1px #0000ff;            /* 아래 파선 */
+}
+#border4 {
+  border-left: solid 3px #ff00ff;               /* 좌우만 */
+  border-right: solid 3px #ff00ff;
+}</pre>
+          </div>
+
+        </section>
+
+        <!-- ===== Section 5: padding vs margin ===== -->
+        <section id="padding-margin" class="study-section">
+          <h2 class="study-h2">padding vs margin</h2>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>속성</th><th>위치</th><th>특징</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>padding</code></td>
+                <td>테두리 <strong>안</strong>쪽 여백</td>
+                <td>배경색이 padding 영역까지 채워짐</td>
+              </tr>
+              <tr>
+                <td><code>margin</code></td>
+                <td>테두리 <strong>바깥</strong>쪽 여백</td>
+                <td>다른 요소와의 거리. 배경색 없음.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">padding — 테두리 안 여백</p>
+              <div class="code-block">
+<pre>p {
+  border: 5px solid #00FFFF;
+  padding: 10px 20px 30px 40px;
+  /*       위  오른 아래 왼  */
+}</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">margin — 테두리 바깥 여백</p>
+              <div class="code-block">
+<pre>p {
+  border: 5px solid #00FFFF;
+  padding: 10px;
+  margin: 20px 40px 60px 80px;
+  /*      위  오른 아래  왼 */
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <strong>4값 단축 표기 암기법 — 시계방향:</strong><br>
+            위(top) → 오른쪽(right) → 아래(bottom) → 왼쪽(left)<br>
+            <code>padding: 10px 20px 30px 40px</code> → 위10 / 오른20 / 아래30 / 왼40
+          </div>
+
+        </section>
+
+        <!-- ===== Section 6: box-sizing ===== -->
+        <section id="box-sizing" class="study-section">
+          <h2 class="study-h2">box-sizing</h2>
+
+          <p class="study-p"><code>width</code>와 <code>height</code>가 <strong>어느 영역을 기준</strong>으로 크기를 계산하는지 결정합니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr><th>값</th><th>크기 기준</th><th>특징</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>content-box</code></td>
+                <td><strong>콘텐츠</strong> 영역 기준</td>
+                <td>기본값. padding·border가 추가되면 전체 크기가 커짐</td>
+              </tr>
+              <tr>
+                <td><code>border-box</code></td>
+                <td><strong>테두리</strong> 기준</td>
+                <td>padding·border 포함해서 width 크기 유지. 레이아웃 계산이 쉬움</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">content-box (기본값)</p>
+              <div class="code-block">
+<pre>.one {
+  border: 10px solid red;
+  width: 300px;
+  height: 100px;
+  box-sizing: content-box;
+}
+/* 실제 차지 너비:
+   300(content) + 20(border) = 320px */</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">border-box</p>
+              <div class="code-block">
+<pre>.two {
+  border: 10px solid blue;
+  width: 300px;
+  height: 100px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+/* 실제 차지 너비: 300px 고정
+   content = 300 - 20(border) - 100(padding) */</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <strong>실무 팁:</strong> <code>* { box-sizing: border-box; }</code>를 전체에 적용하면 padding/border가 추가돼도 레이아웃이 틀어지지 않아 편리합니다.
+          </div>
+
+        </section>
+
+        <!-- ===== Section 7: 블록 vs 인라인 ===== -->
+        <section id="block-inline" class="study-section">
+          <h2 class="study-h2">블록 vs 인라인</h2>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>대표 태그</th>
+                <th>너비</th>
+                <th>줄바꿈</th>
+                <th>width/height</th>
+                <th>margin 위아래</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>블록(block)</strong></td>
+                <td><code>div, h1~h6, p, ul, ol, li, table, form</code></td>
+                <td>가로 전체</td>
+                <td>발생</td>
+                <td>지정 가능</td>
+                <td>적용됨</td>
+              </tr>
+              <tr>
+                <td><strong>인라인(inline)</strong></td>
+                <td><code>span, a, img, input, b, strong, i, small</code></td>
+                <td>내용 너비</td>
+                <td>없음</td>
+                <td><strong>무시됨</strong></td>
+                <td><strong>무시됨</strong></td>
+              </tr>
+              <tr>
+                <td><strong>인라인블록</strong></td>
+                <td><code>img, button</code></td>
+                <td>내용 너비</td>
+                <td>없음</td>
+                <td>지정 가능</td>
+                <td>적용됨</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="highlight-box">
+            <strong>인라인 요소 주의점:</strong> <code>display: inline</code>이면 <code>width</code>, <code>height</code>, <code>margin-top</code>, <code>margin-bottom</code>을 지정해도 <strong>적용되지 않음</strong>.<br>
+            크기 조절이 필요하면 <code>display: inline-block</code>으로 변경.
+          </div>
+
+          <h3 class="study-h3">display로 형식 변경</h3>
+
+          <div class="code-block">
+<pre>/* 인라인 → 블록으로 변경 */
+a { display: block; width: 200px; }
+
+/* 블록 → 인라인으로 변경 (수평 메뉴) */
+li { display: inline; }
+
+/* 인라인처럼 나란히, 블록처럼 크기 지정 */
+span { display: inline-block; width: 100px; height: 50px; }</pre>
+          </div>
+
+
+          <h3 class="study-h3">퀴즈로 복습하기</h3>
+          <a href="../quiz/week07.html" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+          ">7주차 퀴즈 풀기 →</a>
+        </section>
+
+      </main>
+    </div><!-- /study-wrapper -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

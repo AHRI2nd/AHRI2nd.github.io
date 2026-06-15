@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3주차 학습 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/study.css">
+</head>
+<body>
+
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">3주차 학습</span>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week02.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../quiz/week03.html" class="btn-nav btn-nav--accent">퀴즈 풀기 →</a></div>
+      <div><a href="week04.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <div class="study-wrapper">
+
+      <!-- TOC Sidebar -->
+      <aside class="study-toc">
+        <p class="toc-title">목차</p>
+        <ul class="toc-list">
+          <li><a href="#list">목록 (리스트)</a></li>
+          <li><a href="#table">표 (테이블)</a></li>
+          <li><a href="#iframe">iframe</a></li>
+          <li><a href="#form">폼 (form)</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="study-content">
+
+        <!-- ===== Section 1: 목록 ===== -->
+        <section id="list" class="study-section">
+          <h2 class="study-h2">목록 (리스트)</h2>
+
+          <h3 class="study-h3">ul / ol 비교</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>태그</th>
+                <th>종류</th>
+                <th>기본 마커</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;ul&gt;</code></td>
+                <td>순서 없는 목록 (Unordered List)</td>
+                <td>● (채워진 원)</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;ol&gt;</code></td>
+                <td>순서 있는 목록 (Ordered List)</td>
+                <td>1, 2, 3 …</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">ol 속성 — type과 start</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>속성</th>
+                <th>값</th>
+                <th>결과</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="5"><code style="font-family:monospace;font-size:.9em">type</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">"1"</code></td>
+                <td>1, 2, 3 … (기본값)</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">"a"</code></td>
+                <td>a, b, c …</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">"A"</code></td>
+                <td>A, B, C …</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">"i"</code></td>
+                <td>i, ii, iii … (소문자 로마자)</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">"I"</code></td>
+                <td>I, II, III … (대문자 로마자)</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">start</code></td>
+                <td><code style="font-family:monospace;font-size:.9em">start="3"</code></td>
+                <td>3번째 항목부터 시작</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">예제: ul / ol 기본 사용</h3>
+
+          <div class="code-compare">
+            <div class="code-block">
+              <span class="code-label">ul — 가고 싶은 곳</span>
+              <pre>&lt;ul&gt;
+  &lt;li&gt;제주도&lt;/li&gt;
+  &lt;li&gt;일본&lt;/li&gt;
+  &lt;li&gt;미국&lt;/li&gt;
+&lt;/ul&gt;</pre>
+            </div>
+            <div class="code-block">
+              <span class="code-label">ol — type="i", start="3"</span>
+              <pre>&lt;ol type="i" start="3"&gt;
+  &lt;li&gt;돈까스&lt;/li&gt;
+  &lt;li&gt;삼계탕&lt;/li&gt;
+  &lt;li&gt;갈비탕&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- 출력: iii. iv. v. --&gt;</pre>
+            </div>
+          </div>
+
+          <h3 class="study-h3">중첩 목록 (Nested List)</h3>
+          <p class="study-p"><code style="font-family:monospace;font-size:.9em">&lt;li&gt;</code> 안에 새 <code style="font-family:monospace;font-size:.9em">&lt;ul&gt;</code>을 중첩하면 2단계 목록을 만들 수 있습니다.</p>
+
+          <div class="code-block">
+            <span class="code-label">중첩 목록 예제</span>
+            <pre>&lt;ul&gt;
+  &lt;li&gt;메뉴1&lt;/li&gt;
+  &lt;ul&gt;
+    &lt;li&gt;메뉴1-1&lt;/li&gt;
+    &lt;li&gt;메뉴1-2&lt;/li&gt;
+    &lt;li&gt;메뉴1-3&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li&gt;메뉴2&lt;/li&gt;
+  &lt;li&gt;메뉴3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>ul vs ol 선택 기준:</strong> 순서가 중요하지 않은 나열(메뉴, 목록)은 <strong>ul</strong>,
+            순서가 의미를 가진 단계(레시피, 절차)는 <strong>ol</strong>을 사용합니다.
+          </div>
+        </section>
+
+        <!-- ===== Section 2: 표(테이블) ===== -->
+        <section id="table" class="study-section">
+          <h2 class="study-h2">표 (테이블)</h2>
+
+          <h3 class="study-h3">테이블 기본 구조</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>태그</th>
+                <th>역할</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;table&gt;</code></td>
+                <td>테이블 전체를 감싸는 컨테이너</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;tr&gt;</code></td>
+                <td>Table Row — 행(가로줄) 하나</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;th&gt;</code></td>
+                <td>Table Header — 헤더 셀. 굵게·가운데 정렬이 기본</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;td&gt;</code></td>
+                <td>Table Data — 일반 데이터 셀</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">예제: 학생 성적표</h3>
+
+          <div class="code-block">
+            <span class="code-label">기본 테이블 (border="1")</span>
+            <pre>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;학생명&lt;/th&gt; &lt;th&gt;중간&lt;/th&gt; &lt;th&gt;기말&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;홍길동&lt;/td&gt; &lt;td&gt;98&lt;/td&gt; &lt;td&gt;99&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;김철수&lt;/td&gt; &lt;td&gt;80&lt;/td&gt; &lt;td&gt;89&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+          </div>
+
+          <h3 class="study-h3">셀 병합 — colspan / rowspan</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>속성</th>
+                <th>설명</th>
+                <th>사용 예</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">colspan="n"</code></td>
+                <td>열(가로) 방향으로 n칸 병합</td>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;td colspan="4"&gt;점심시간&lt;/td&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">rowspan="n"</code></td>
+                <td>행(세로) 방향으로 n칸 병합</td>
+                <td><code style="font-family:monospace;font-size:.9em">&lt;td rowspan="3"&gt;휴강&lt;/td&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">예제: 시간표 (colspan + rowspan)</h3>
+
+          <div class="code-block">
+            <span class="code-label">시간표 — 셀 병합 예제</span>
+            <pre>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;월&lt;/th&gt;&lt;th&gt;화&lt;/th&gt;&lt;th&gt;수&lt;/th&gt;&lt;th&gt;목&lt;/th&gt;&lt;th&gt;금&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;국어&lt;/td&gt;&lt;td&gt;수학&lt;/td&gt;&lt;td&gt;영어&lt;/td&gt;&lt;td&gt;과학&lt;/td&gt;
+    &lt;td rowspan="3"&gt;휴강&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan="4"&gt;점심시간&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;국어&lt;/td&gt;&lt;td&gt;수학&lt;/td&gt;&lt;td&gt;영어&lt;/td&gt;&lt;td&gt;과학&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>셀 병합 주의:</strong> <code style="font-family:monospace;font-size:.9em">colspan</code>으로 가로 n칸을 합치면
+            해당 행에서 그만큼 <code style="font-family:monospace;font-size:.9em">&lt;td&gt;</code>를 생략해야 합니다.
+            <code style="font-family:monospace;font-size:.9em">rowspan</code>도 마찬가지로 아래 행에서 셀 수를 맞춰야 합니다.
+          </div>
+        </section>
+
+        <!-- ===== Section 3: iframe ===== -->
+        <section id="iframe" class="study-section">
+          <h2 class="study-h2">iframe</h2>
+
+          <p class="study-p"><code style="font-family:monospace;font-size:.9em">&lt;iframe&gt;</code>은 현재 페이지 안에 다른 HTML 문서나 웹 페이지를 삽입하는 태그입니다.</p>
+
+          <h3 class="study-h3">주요 속성</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>속성</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">src</code></td>
+                <td>iframe에 표시할 페이지 경로</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">name</code></td>
+                <td>iframe에 이름 부여 — 링크의 target으로 연결 가능</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">width / height</code></td>
+                <td>iframe의 가로·세로 크기 (px)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">예제 1: 다른 HTML 파일 삽입</h3>
+
+          <div class="code-block">
+            <span class="code-label">iframe — HTML 파일 삽입</span>
+            <pre>&lt;iframe src="./page.html"
+        width="200" height="300"&gt;
+  iframe을 지원하지 않습니다
+&lt;/iframe&gt;</pre>
+          </div>
+
+          <h3 class="study-h3">예제 2: name + target으로 iframe 제어</h3>
+          <p class="study-p">링크의 <code style="font-family:monospace;font-size:.9em">target</code> 속성에 iframe의 <code style="font-family:monospace;font-size:.9em">name</code>을 지정하면, 링크 클릭 시 해당 iframe 안에서 페이지가 열립니다.</p>
+
+          <div class="code-block">
+            <span class="code-label">name·target 연결 예제</span>
+            <pre>&lt;a href="page-a.html" target="view-frame"&gt;A 페이지 보기&lt;/a&gt;
+&lt;a href="page-b.html" target="view-frame"&gt;B 페이지 보기&lt;/a&gt;
+
+&lt;iframe name="view-frame"
+        width="450" height="300"&gt;
+&lt;/iframe&gt;</pre>
+          </div>
+
+          <div class="highlight-box">
+            <strong>활용 포인트:</strong> 링크 클릭 시 새 창 없이 옆에 배치한 iframe 안에서 페이지가 바뀌도록 구성할 수 있습니다.
+            여러 iframe에 각각 다른 name을 주면 독립적으로 제어할 수 있습니다.
+          </div>
+        </section>
+
+        <!-- ===== Section 4: 폼(form) ===== -->
+        <section id="form" class="study-section">
+          <h2 class="study-h2">폼 (form)</h2>
+
+          <p class="study-p">사용자 입력을 받아 서버로 전송하는 영역입니다. <code style="font-family:monospace;font-size:.9em">&lt;form&gt;</code> 안에 다양한 입력 요소를 배치합니다.</p>
+
+          <h3 class="study-h3">form 속성</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>속성</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">action</code></td>
+                <td>데이터를 전송할 서버 URL</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">method="GET"</code></td>
+                <td>URL 쿼리스트링에 데이터 포함 (기본값)</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">method="POST"</code></td>
+                <td>요청 본문에 데이터 포함 — 비밀번호·파일 전송에 사용</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">input 태그 type 종류</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>type 값</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">text</code></td>
+                <td>한 줄 텍스트 입력</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">email</code></td>
+                <td>이메일 형식 검증 포함 텍스트 입력</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">radio</code></td>
+                <td>라디오 버튼 — 같은 name 그룹에서 하나만 선택</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">checkbox</code></td>
+                <td>체크박스 — 여러 항목 중복 선택 가능</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">submit</code></td>
+                <td>폼 전송 버튼 — value가 버튼 텍스트</td>
+              </tr>
+              <tr>
+                <td><code style="font-family:monospace;font-size:.9em">reset</code></td>
+                <td>폼 초기화 버튼 — 모든 입력값 리셋</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">예제: 회원가입 폼</h3>
+
+          <div class="code-block">
+            <span class="code-label">회원가입 기본 구조</span>
+            <pre>&lt;form action="#" method="POST"&gt;
+  이름: &lt;input type="text" name="name"&gt;&lt;br&gt;
+  주소: &lt;input type="text" name="address"&gt;&lt;br&gt;
+  email: &lt;input type="email" name="email" required&gt;&lt;br&gt;
+
+  &lt;input type="radio" name="gender" value="Male"&gt; 남&amp;nbsp;
+  &lt;input type="radio" name="gender" value="Female"&gt; 여&lt;br&gt;&lt;br&gt;
+
+  &lt;input type="submit" value="전송"&gt;
+  &lt;input type="reset" value="취소"&gt;
+&lt;/form&gt;</pre>
+          </div>
+
+          <h3 class="study-h3">select — 드롭다운 목록</h3>
+
+          <div class="code-block">
+            <span class="code-label">select / option 구조</span>
+            <pre>직업:
+&lt;select name="role"&gt;
+  &lt;option value="student"&gt;학생&lt;/option&gt;
+  &lt;option value="employed"&gt;직장인&lt;/option&gt;
+  &lt;option value="other"&gt;기타&lt;/option&gt;
+&lt;/select&gt;</pre>
+          </div>
+
+          <h3 class="study-h3">textarea — 여러 줄 텍스트</h3>
+
+          <div class="code-compare">
+            <div class="code-block">
+              <span class="code-label">textarea 기본 구조</span>
+              <pre>하고 싶은 말:&lt;br&gt;
+&lt;textarea
+  name="comment"
+  rows="10"
+  cols="30"&gt;
+&lt;/textarea&gt;</pre>
+            </div>
+            <div class="code-block">
+              <span class="code-label">checkbox 그룹 예시</span>
+              <pre>언어 선택:&lt;br&gt;
+&lt;input type="checkbox" name="lang"&gt; C&lt;br&gt;
+&lt;input type="checkbox" name="lang"&gt; Java&lt;br&gt;
+&lt;input type="checkbox" name="lang"&gt; Python&lt;br&gt;</pre>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <strong>radio vs checkbox:</strong>
+            <code style="font-family:monospace;font-size:.9em">radio</code>는 같은 name 그룹에서 <strong>하나만</strong> 선택됩니다 (성별, 찬반 등).
+            <code style="font-family:monospace;font-size:.9em">checkbox</code>는 <strong>여러 항목을 중복 선택</strong>할 수 있습니다 (관심 언어, 알레르기 항목 등).
+          </div>
+
+          <h3 class="study-h3">퀴즈로 복습하기</h3>
+          <a href="../quiz/week03.html" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+          ">3주차 퀴즈 풀기 →</a>
+        </section>
+
+      </main>
+    </div><!-- /study-wrapper -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

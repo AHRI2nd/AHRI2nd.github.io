@@ -1,0 +1,247 @@
+/* ===== Card-specific Variables ===== */
+:root {
+  --card-front-bg: #ffffff;
+  --card-front-text: #1a1a2e;
+  --card-back-bg: #1a1a2e;
+  --card-back-text: #e8eaf6;
+  --progress-bg: #d1dce5;
+}
+
+#dark-mode:checked ~ .site-wrapper {
+  --card-front-bg: #21262d;
+  --card-front-text: #e6edf3;
+  --progress-bg: #21262d;
+}
+
+/* ===== Category Filter ===== */
+#cat-html:checked     ~ .site-wrapper .card:not(.html-card)     { display: none; }
+#cat-css:checked      ~ .site-wrapper .card:not(.css-card)      { display: none; }
+#cat-boxmodel:checked ~ .site-wrapper .card:not(.boxmodel-card) { display: none; }
+
+/* Active filter label highlight */
+#cat-all:checked      ~ .site-wrapper label[for="cat-all"],
+#cat-html:checked     ~ .site-wrapper label[for="cat-html"],
+#cat-css:checked      ~ .site-wrapper label[for="cat-css"],
+#cat-boxmodel:checked ~ .site-wrapper label[for="cat-boxmodel"] {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+/* ===== Nav Filter Tabs ===== */
+.filter-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.filter-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: var(--nav-text);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.filter-label:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--nav-link-hover);
+}
+
+/* ===== Card Count Label ===== */
+.progress-section {
+  padding: 0.35rem 2rem;
+  background: rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.progress-text {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+}
+
+/* ===== Content & Grid ===== */
+.content {
+  padding: 2.5rem 2rem;
+  flex: 1;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Flip Card ===== */
+.card-toggle { display: none; }
+
+.card {
+  perspective: 1000px;
+  height: 280px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+  border-radius: 16px;
+  display: block;
+}
+
+.card-toggle:checked + .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-inner:hover .card-front,
+.card-inner:hover .card-back {
+  box-shadow: 0 8px 32px var(--shadow-hover);
+}
+
+.card-front {
+  background: var(--card-front-bg);
+  border: 1.5px solid var(--border);
+  color: var(--card-front-text);
+}
+
+.card-back {
+  background: var(--card-back-bg);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  color: var(--card-back-text);
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+/* ===== Code blocks inside card answers ===== */
+.answer pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
+  padding: 0.4em 0.7em;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.78em;
+  line-height: 1.45;
+  width: 100%;
+  margin: 0.25em 0;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+
+/* ===== Tags ===== */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.tag-html     { background: rgba(67, 97, 238, 0.12); color: var(--tag-html); }
+.tag-css      { background: rgba(123, 45, 139, 0.12); color: var(--tag-css); }
+.tag-boxmodel { background: rgba(26, 127, 75, 0.12); color: var(--tag-boxmodel); }
+
+.card-back .tag-html     { background: rgba(67, 97, 238, 0.3); color: #a5b4fc; }
+.card-back .tag-css      { background: rgba(167, 139, 250, 0.3); color: #c4b5fd; }
+.card-back .tag-boxmodel { background: rgba(52, 211, 153, 0.3); color: #6ee7b7; }
+
+/* ===== Card Text ===== */
+.question {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+.answer {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.65;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+/* <br> 태그를 flex 컨텍스트에서 줄바꿈으로 동작하게 처리 */
+.question br,
+.answer br {
+  width: 100%;
+  height: 0;
+}
+
+.answer strong {
+  color: #4cc9f0;
+  font-weight: 700;
+}
+
+.answer code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85em;
+}
+
+.card-hint {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.card-back .card-hint {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .filter-tabs {
+    flex-wrap: wrap;
+  }
+
+  .content {
+    padding: 1.5rem 1rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

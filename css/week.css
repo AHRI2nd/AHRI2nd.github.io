@@ -1,0 +1,77 @@
+/* ===== Page Content (학습 / 준비중 공통) ===== */
+.page-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  text-align: center;
+  gap: 1.25rem;
+}
+
+.page-icon {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.page-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 380px;
+  line-height: 1.65;
+}
+
+/* ===== Topic Tags ===== */
+.page-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page-tag {
+  display: inline-flex;
+  padding: 0.28rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.page-tag-html     { background: rgba(67, 97, 238, 0.1); color: #4361ee; }
+.page-tag-css      { background: rgba(123, 45, 139, 0.1); color: #7b2d8b; }
+.page-tag-boxmodel { background: rgba(26, 127, 75, 0.1); color: #1a7f4b; }
+
+/* ===== Back Button ===== */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-back:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* ===== Dark Mode Adjustments ===== */
+#dark-mode:checked ~ .site-wrapper .page-tag-html     { background: rgba(67, 97, 238, 0.2); }
+#dark-mode:checked ~ .site-wrapper .page-tag-css      { background: rgba(123, 45, 139, 0.2); }
+#dark-mode:checked ~ .site-wrapper .page-tag-boxmodel { background: rgba(26, 127, 75, 0.2); }

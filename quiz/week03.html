@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3주차 퀴즈 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flashcard.css">
+</head>
+<body>
+
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+  <input type="radio"    name="category" id="cat-all"  class="hidden-input" checked>
+  <input type="radio"    name="category" id="cat-html" class="hidden-input">
+
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">3주차 퀴즈</span>
+        </div>
+        <div class="filter-tabs">
+          <label for="cat-all"  class="filter-label">ALL</label>
+          <label for="cat-html" class="filter-label">HTML</label>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+      <div class="progress-section">
+        <span class="progress-text">3주차 · 12 카드</span>
+      </div>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week02.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../week/week03.html" class="btn-nav">학습 내용 보기</a></div>
+      <div><a href="week04.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-grid">
+
+        <!-- ==================== 목록(리스트) ==================== -->
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-01" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-01">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;ul&gt;과 &lt;ol&gt;의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><strong>&lt;ul&gt;</strong> (Unordered List): 순서 없는 목록. 기본 마커 ●.<br><strong>&lt;ol&gt;</strong> (Ordered List): 순서 있는 목록. 기본 마커 1, 2, 3…<br>두 태그 모두 항목은 <code>&lt;li&gt;</code>로 작성.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-02" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-02">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. 중첩 목록(2단계 목록)은 어떻게 만드나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>&lt;li&gt;</code> 다음에 바로 새 <code>&lt;ul&gt;</code>을 추가한다.<br>안쪽 <code>&lt;ul&gt;</code>의 마커는 자동으로 ○로 바뀌어 2단계 표시.<br>예: <code>&lt;ul&gt;&lt;li&gt;메뉴1&lt;/li&gt;&lt;ul&gt;&lt;li&gt;메뉴1-1&lt;/li&gt;&lt;/ul&gt;…</code></p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 테이블 ==================== -->
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-03" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-03">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. 테이블 기본 구조 태그 4가지는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>&lt;table&gt;</code>: 테이블 컨테이너<br><code>&lt;tr&gt;</code>: Table Row — 행(가로줄)<br><code>&lt;th&gt;</code>: Table Header — 헤더 셀 (굵게·가운데 정렬)<br><code>&lt;td&gt;</code>: Table Data — 일반 데이터 셀</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-04" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-04">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;th&gt;와 &lt;td&gt;의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><strong>&lt;th&gt;</strong>: 테이블 헤더 셀. 기본으로 <strong>굵게·가운데 정렬</strong> 적용. 열·행의 제목에 사용.<br><strong>&lt;td&gt;</strong>: 일반 데이터 셀. 기본 정렬은 왼쪽.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-05" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-05">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. colspan과 rowspan의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>colspan="n"</code>: 열(가로) 방향으로 n칸 병합.<br><code>rowspan="n"</code>: 행(세로) 방향으로 n칸 병합.<br>병합한 만큼 다른 행·열에서 <code>&lt;td&gt;</code>를 <strong>생략</strong>해야 칸 수가 맞음.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-06" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-06">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;td rowspan="3"&gt;휴강&lt;/td&gt;은 무엇을 의미하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer">"휴강" 셀이 <strong>세로(행) 방향으로 3칸을 합쳐</strong> 하나로 표시됨.<br>아래 2개 행에서는 이 셀에 해당하는 <code>&lt;td&gt;</code>를 작성하지 않아야 함.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== iframe ==================== -->
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-07" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-07">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;iframe&gt;이란 무엇이며, 주요 속성 3가지는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer">현재 페이지 안에 <strong>다른 HTML 문서나 웹 페이지를 삽입</strong>하는 태그.<br><code>src</code>: 표시할 페이지 경로<br><code>name</code>: iframe 이름 (target 연결용)<br><code>width / height</code>: 크기 지정</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-08" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-08">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;a&gt;의 target 속성으로 iframe을 제어하려면?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>&lt;iframe name="view"&gt;</code>처럼 iframe에 <strong>name 속성</strong>을 부여한 뒤,<br>링크에 <code>target="view"</code>를 지정한다.<br>링크 클릭 시 해당 iframe 안에서 페이지가 열림.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== form ==================== -->
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-09" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-09">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. form의 action과 method 속성은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>action</code>: 데이터를 전송할 <strong>서버 URL</strong>.<br><code>method="GET"</code>: URL 쿼리스트링에 데이터 포함 (기본값).<br><code>method="POST"</code>: 요청 본문에 데이터 포함. 비밀번호·파일 전송에 사용.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-10" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-10">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. radio와 checkbox의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>type="radio"</code>: 같은 name 그룹에서 <strong>하나만</strong> 선택 가능.<br>(예: 성별, 찬반 선택)<br><code>type="checkbox"</code>: <strong>여러 항목 중복 선택</strong> 가능.<br>(예: 알레르기 항목, 관심 언어)</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-11" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-11">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. input type="submit"과 type="reset"의 역할은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>type="submit"</code>: 폼 데이터를 action 주소로 <strong>전송</strong>하는 버튼. <code>value</code>가 버튼 텍스트.<br><code>type="reset"</code>: 폼 안의 모든 입력값을 <strong>초기화</strong>하는 버튼.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card html-card">
+          <input type="checkbox" id="flip-week03-12" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week03-12">
+            <div class="card-front">
+              <span class="tag tag-html">HTML</span>
+              <p class="question">Q. &lt;select&gt;와 &lt;option&gt;으로 드롭다운을 만드는 구조는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-html">HTML</span>
+              <p class="answer"><code>&lt;select name="role"&gt;</code>로 드롭다운 컨테이너 생성.<br>각 항목은 <code>&lt;option value="값"&gt;표시텍스트&lt;/option&gt;</code>으로 추가.<br>사용자가 선택하면 해당 option의 <code>value</code>가 전송됨.</p>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /content -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

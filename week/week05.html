@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5주차 학습 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/study.css">
+</head>
+<body>
+
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">5주차 학습</span>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week04.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../quiz/week05.html" class="btn-nav btn-nav--accent">퀴즈 풀기 →</a></div>
+      <div><a href="week06.html" class="btn-nav">다음 주차 →</a></div>
+    </div>
+
+    <div class="study-wrapper">
+
+      <!-- TOC Sidebar -->
+      <aside class="study-toc">
+        <p class="toc-title">목차</p>
+        <ul class="toc-list">
+          <li><a href="#selector-advanced">CSS 선택자 심화</a></li>
+          <li><a href="#pseudo-element">가상 요소</a></li>
+          <li><a href="#box-advanced">Box Model 속성 심화</a></li>
+          <li><a href="#reset-layout">CSS Reset &amp; 정렬</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="study-content">
+
+        <!-- ===== Section 1: CSS 선택자 심화 ===== -->
+        <section id="selector-advanced" class="study-section">
+          <h2 class="study-h2">CSS 선택자 심화</h2>
+
+          <p class="study-p">4주차에서 배운 기본 선택자(타입·클래스·ID·전체) 외에 <strong>관계 기반 선택자</strong>와 <strong>상태 선택자</strong>를 추가로 학습합니다.</p>
+
+          <h3 class="study-h3">선택자 8가지 정리</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>이름</th>
+                <th>문법</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>타입 선택자</td>
+                <td><code>A { }</code></td>
+                <td>모든 A 요소 선택</td>
+              </tr>
+              <tr>
+                <td>자식 선택자</td>
+                <td><code>A &gt; B { }</code></td>
+                <td>A의 <strong>직접 자식</strong> B만 선택</td>
+              </tr>
+              <tr>
+                <td>자손 선택자</td>
+                <td><code>A B { }</code></td>
+                <td>A 안의 B <strong>전체</strong> (손자 포함)</td>
+              </tr>
+              <tr>
+                <td>인접형제 선택자</td>
+                <td><code>A + B { }</code></td>
+                <td>A 바로 뒤 형제 B <strong>첫 번째만</strong></td>
+              </tr>
+              <tr>
+                <td>가상 클래스</td>
+                <td><code>A:hover { }</code></td>
+                <td>특정 <strong>상태</strong>의 A 요소</td>
+              </tr>
+              <tr>
+                <td>속성 선택자</td>
+                <td><code>A[C] { }</code></td>
+                <td>C 속성을 가진 A 요소</td>
+              </tr>
+              <tr>
+                <td>ID 선택자</td>
+                <td><code>#id명 { }</code></td>
+                <td>id 속성값으로 선택 (유일)</td>
+              </tr>
+              <tr>
+                <td>클래스 선택자</td>
+                <td><code>.class명 { }</code></td>
+                <td>class 속성값으로 선택 (재사용 가능)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">자식 선택자 vs 자손 선택자</h3>
+
+          <p class="study-p">가장 혼동하기 쉬운 두 선택자입니다. 아래 HTML 구조를 기준으로 차이를 확인하세요.</p>
+
+          <div class="code-block">
+<pre>&lt;div&gt;
+  &lt;p&gt;div 의 첫 번째 자식&lt;/p&gt;       ← div의 직접 자식
+  &lt;span&gt;div 의 두 번째 자식
+    &lt;p&gt;span 의 자식 / div 의 후손&lt;/p&gt;  ← div의 자손 (손자)
+  &lt;/span&gt;
+&lt;/div&gt;</pre>
+          </div>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>선택자</th>
+                <th>코드 예시</th>
+                <th>선택되는 요소</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>자식 선택자</td>
+                <td><code>div &gt; p { color: green; }</code></td>
+                <td>div의 직접 자식 p 하나만 → <em>"div 의 첫 번째 자식"</em></td>
+              </tr>
+              <tr>
+                <td>자손 선택자</td>
+                <td><code>div p { background: #ff8; }</code></td>
+                <td>div 안의 모든 p → <em>첫 번째 자식 p + span 안의 p</em> 모두</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="highlight-box">
+            <strong>핵심 암기법:</strong> 자식(<code>&gt;</code>)은 <em>바로 아래 한 단계</em>만, 자손(공백)은 <em>깊이에 상관없이 전부</em>
+          </div>
+
+          <h3 class="study-h3">인접형제 선택자 (A + B)</h3>
+
+          <p class="study-p"><code>A + B</code>는 A 요소 바로 뒤에 오는 <strong>첫 번째 형제</strong> B 요소만 선택합니다. 같은 부모를 가진 요소끼리만 형제 관계가 성립합니다.</p>
+
+          <div class="code-block">
+<pre>h2 + p { color: red; }
+/* h2 바로 다음에 오는 첫 번째 p만 빨간색 */</pre>
+          </div>
+
+          <h3 class="study-h3">가상 클래스 선택자 (:hover 등)</h3>
+
+          <p class="study-p">요소의 <strong>특정 상태</strong>에만 스타일을 적용합니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>가상 클래스</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>:hover</code></td>
+                <td>마우스 올렸을 때</td>
+              </tr>
+              <tr>
+                <td><code>:focus</code></td>
+                <td>포커스를 받았을 때 (input 클릭 등)</td>
+              </tr>
+              <tr>
+                <td><code>:first-child</code></td>
+                <td>부모의 첫 번째 자식일 때</td>
+              </tr>
+              <tr>
+                <td><code>:last-child</code></td>
+                <td>부모의 마지막 자식일 때</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">속성 선택자 (A[C])</h3>
+
+          <p class="study-p">특정 속성을 가진 요소를 선택합니다.</p>
+
+          <div class="code-block">
+<pre>input[type] { border: 1px solid blue; }
+/* type 속성을 가진 모든 input */
+
+a[href] { color: green; }
+/* href 속성을 가진 모든 a 태그 */</pre>
+          </div>
+
+        </section>
+
+        <!-- ===== Section 2: 가상 요소 ===== -->
+        <section id="pseudo-element" class="study-section">
+          <h2 class="study-h2">가상 요소 (::after / ::before)</h2>
+
+          <p class="study-p">가상 요소(Pseudo-element)는 HTML에 태그를 추가하지 않고, CSS만으로 <strong>요소의 앞·뒤에 내용을 삽입</strong>하는 기법입니다.</p>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>가상 요소</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>::after</code></td>
+                <td>요소의 <strong>뒤</strong>에 내용 삽입. <code>content</code> 속성 필수</td>
+              </tr>
+              <tr>
+                <td><code>::before</code></td>
+                <td>요소의 <strong>앞</strong>에 내용 삽입. <code>content</code> 속성 필수</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="study-h3">::after 예시 — "NEW!" 뱃지</h3>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">HTML</p>
+              <div class="code-block">
+<pre>&lt;ul&gt;
+  &lt;li class="new"&gt;자켓 - 200,000원&lt;/li&gt;
+  &lt;li&gt;흰색 T 셔츠 - 40,000원&lt;/li&gt;
+  &lt;li&gt;체크 T 셔츠 - 48,000원&lt;/li&gt;
+  &lt;li class="new"&gt;스포츠 가방 - 20,000원&lt;/li&gt;
+&lt;/ul&gt;</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">CSS</p>
+              <div class="code-block">
+<pre>.new::after {
+  content: "NEW!";
+  font-size: 0.75rem;
+  background-color: #199;
+  color: #fff;
+  padding: 5px;
+  margin-left: 5px;
+  border-radius: 3px;
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <strong>주의:</strong> <code>::after</code> / <code>::before</code>는 반드시 <code>content</code> 속성이 있어야 표시됩니다. 빈 문자열 <code>content: ""</code>도 가능합니다.
+          </div>
+
+        </section>
+
+        <!-- ===== Section 3: Box Model 속성 심화 ===== -->
+        <section id="box-advanced" class="study-section">
+          <h2 class="study-h2">Box Model 속성 심화</h2>
+
+          <p class="study-p">1주차에서 Box Model 구조를 배웠습니다. 5주차에서는 실습에서 자주 쓰이는 관련 속성들을 추가로 학습합니다.</p>
+
+          <h3 class="study-h3">border-radius — 테두리 모서리 둥글게</h3>
+
+          <div class="code-block">
+<pre>h1 {
+  border: 3px solid #fff;
+  border-radius: 20px;     /* 모든 모서리 20px 둥글게 */
+}
+
+img {
+  border-radius: 30%;      /* 비율로 지정 — 50%이면 원형 */
+}
+
+a {
+  border-radius: 4px;                /* 기본 4px */
+  border-top-left-radius: 20px;      /* 특정 모서리만 다르게 */
+}</pre>
+          </div>
+
+          <h3 class="study-h3">display 속성</h3>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>값</th>
+                <th>설명</th>
+                <th>기본 태그 예시</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>block</code></td>
+                <td>가로 전체 차지, 줄바꿈 발생. width/height 지정 가능</td>
+                <td><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>inline</code></td>
+                <td>내용 너비만큼만 차지, 줄바꿈 없음. width/height 무시</td>
+                <td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>inline-block</code></td>
+                <td>인라인처럼 나란히, 블록처럼 width/height 지정 가능</td>
+                <td><code>&lt;img&gt;</code>, <code>&lt;button&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>none</code></td>
+                <td>화면에서 완전히 숨김 (공간도 사라짐)</td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="code-block">
+<pre>/* a 태그를 블록으로 만들어 버튼처럼 너비를 갖게 */
+a {
+  display: block;
+  background-color: #ff9a9c;
+  padding: 20px 0;
+}</pre>
+          </div>
+
+          <h3 class="study-h3">list-style — 목록 마커 제거</h3>
+
+          <div class="code-block">
+<pre>ul {
+  list-style: none;   /* ●, ○ 등 기본 마커 제거 */
+  padding: 0;
+  margin: 0;
+}</pre>
+          </div>
+
+          <h3 class="study-h3">text-decoration — 링크 밑줄 제거</h3>
+
+          <div class="code-block">
+<pre>a {
+  text-decoration: none;    /* 링크 밑줄 제거 */
+  /* text-decoration: underline; — 밑줄 */
+  /* text-decoration: line-through; — 취소선 */
+}</pre>
+          </div>
+
+        </section>
+
+        <!-- ===== Section 4: CSS Reset & 정렬 ===== -->
+        <section id="reset-layout" class="study-section">
+          <h2 class="study-h2">CSS Reset &amp; 정렬</h2>
+
+          <h3 class="study-h3">CSS Reset</h3>
+
+          <p class="study-p">브라우저마다 기본 margin·padding 값이 달라 레이아웃이 어긋날 수 있습니다. 전체 선택자(<code>*</code>)로 초기화하는 것이 일반적입니다.</p>
+
+          <div class="code-block">
+<pre>* {
+  margin: 0;
+  padding: 0;
+}
+/* 모든 요소의 바깥·안쪽 여백을 0으로 초기화 */</pre>
+          </div>
+
+          <h3 class="study-h3">margin: auto — 블록 요소 가운데 정렬</h3>
+
+          <p class="study-p">블록 요소에 <code>width</code>를 지정하고 <code>margin: auto</code>를 사용하면 수평 가운데 정렬이 됩니다.</p>
+
+          <div class="code-compare">
+            <div class="code-col">
+              <p class="code-label">적용 전</p>
+              <div class="code-block">
+<pre>h1 {
+  margin: 20px 0;
+  /* 왼쪽 정렬 */
+}</pre>
+              </div>
+            </div>
+            <div class="code-col">
+              <p class="code-label">적용 후</p>
+              <div class="code-block">
+<pre>h1 {
+  width: 300px;
+  margin: 20px auto;
+  /* 수평 가운데 정렬 */
+}</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <strong>margin 단축 표기:</strong><br>
+            <code>margin: 20px auto</code> → 위·아래 20px, 좌·우 auto<br>
+            <code>margin: 10px 20px 30px 40px</code> → 위·오른쪽·아래·왼쪽 (시계방향)
+          </div>
+
+          <h3 class="study-h3">text-align: center — 텍스트 가운데 정렬</h3>
+
+          <p class="study-p">블록 요소 <strong>안의 인라인 콘텐츠(텍스트·이미지)</strong>를 가운데 정렬합니다. 블록 요소 자체를 이동시키지는 않습니다.</p>
+
+          <div class="code-block">
+<pre>h1 {
+  text-align: center;   /* 텍스트 가운데 정렬 */
+}
+
+p, ul {
+  text-align: center;
+  margin-bottom: 20px;
+}</pre>
+          </div>
+
+          <h3 class="study-h3">5주차 CSS 실습 정리 — 오렌지농장 스타일</h3>
+
+          <div class="code-block">
+<pre>* { margin: 0; padding: 0; }
+body { background-color: #bbf1ef; }
+
+h1 {
+  font-size: 18px;
+  border: 3px solid #ffffff;
+  border-radius: 20px;
+  padding: 6px 0;
+  margin: 20px auto;
+  width: 300px;
+  text-align: center;
+}
+
+img {
+  width: 20%; height: 20%;
+  border: 5px solid orange;
+  border-radius: 30%;
+  padding: 10px;
+}
+
+a {
+  background-color: #ff9a9c;
+  display: block;
+  padding: 20px 0;
+  border-radius: 4px;
+  color: #ffffff;
+  border-top-left-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul {
+  width: 100px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+li { margin-bottom: 20px; }</pre>
+          </div>
+
+
+          <h3 class="study-h3">퀴즈로 복습하기</h3>
+          <a href="../quiz/week05.html" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+          ">5주차 퀴즈 풀기 →</a>
+        </section>
+
+      </main>
+    </div><!-- /study-wrapper -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

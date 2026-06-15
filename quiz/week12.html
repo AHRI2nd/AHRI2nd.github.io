@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12주차 퀴즈 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flashcard.css">
+</head>
+<body>
+
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+  <input type="radio"    name="category" id="cat-all" class="hidden-input" checked>
+  <input type="radio"    name="category" id="cat-css" class="hidden-input">
+
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">12주차 퀴즈</span>
+        </div>
+        <div class="filter-tabs">
+          <label for="cat-all" class="filter-label">ALL</label>
+          <label for="cat-css" class="filter-label">CSS</label>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+      <div class="progress-section">
+        <span class="progress-text">12주차 · 12 카드</span>
+      </div>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week11.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../week/week12.html" class="btn-nav">학습 내용 보기</a></div>
+      <div></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-grid">
+
+        <!-- ==================== flex 메뉴 ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-01" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-01">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>ul</code>·<code>li</code> 목록을 가로 수평 메뉴로 만들려면?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">부모 <code>ul</code>에 <code>display: flex</code>를 주면 <code>li</code>들이 <strong>가로로 나란히</strong> 배치됨.<br>여기에 <code>list-style: none</code>(불릿 제거), <code>a</code>에 <code>text-decoration: none</code>(밑줄 제거)을 더하면 깔끔한 메뉴 완성.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== space-between ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-02" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-02">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 로고는 왼쪽, 메뉴는 오른쪽으로 양 끝에 벌려 배치하려면 어떤 속성을 쓰나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">컨테이너에 <code>display: flex</code> + <code>justify-content: space-between</code> (좌우 끝으로 벌리기) + <code>align-items: center</code> (세로 가운데).<br><pre>.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 햄버거: nav-toggle ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-03" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-03">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 반응형 햄버거 메뉴에서 ☰ 버튼(<code>.nav-toggle</code>)은 큰 화면과 모바일에서 각각 어떻게 표시하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">큰 화면(기본): <code>display: none</code>으로 <strong>숨김</strong>.<br>모바일(<code>@media (max-width: 640px)</code>): <code>display: block</code>으로 <strong>표시</strong>.<br>반대로 <code>.nav-menu</code>는 큰 화면에서 보이고 모바일에서 숨김.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 햄버거: show 토글 ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-04" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-04">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 모바일에서 숨긴 메뉴(<code>.nav-menu</code>)를 버튼으로 펼칠 때, 메뉴가 보이는 상태는 어떤 CSS인가?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">기본은 <code>.nav-menu { display: none; }</code>로 숨김.<br>버튼을 눌러 <code>.show</code> 클래스가 붙으면 <code>.nav-menu.show { display: flex; flex-direction: column; }</code>으로 세로 메뉴가 펼쳐짐.<br><br>(클래스 토글 자체는 JS가 필요. CSS만으로는 checkbox + :checked로 대체.)</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 2단편집 ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-05" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-05">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>main</code>과 <code>aside</code>를 가로 2단편집으로 배치하고 본문을 2배 넓게 하려면?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">두 요소를 감싼 컨테이너에 <code>display: flex</code>, 자식에 <code>flex</code> 비율 지정.<br><pre>.wrapper { display: flex; gap: 24px; }
+main  { flex: 2; }   /* 넓게 */
+aside { flex: 1; }   /* 좁게 */</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== aside 의미 ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-06" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-06">
+            <div class="card-front">
+              <span class="tag tag-css">HTML</span>
+              <p class="question">Q. <code>main</code>과 <code>aside</code> 시맨틱 태그는 각각 무엇을 담나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">HTML</span>
+              <div class="answer"><code>main</code>: 페이지의 <strong>핵심 본문</strong>.<br><code>aside</code>: 본문과 직접 관련은 적은 <strong>부가 정보</strong> — 카테고리 메뉴, 최근 글 목록, 광고 등.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== overflow scroll ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-07" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-07">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 사이드바의 목록이 길 때, 고정 높이 안에서 세로 스크롤만 생기게 하려면?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">고정 <code>height</code>를 주고 <code>overflow</code>로 넘침을 처리.<br><pre>.recentNav ol {
+  height: 240px;
+  overflow: hidden scroll;
+  /* 가로 숨김 / 세로 스크롤 */
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== transition ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-08" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-08">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>transition</code>은 무엇을 하는 속성인가? 무엇을 지정하면 되나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">속성 값이 바뀔 때 그 변화를 <strong>부드럽게 이어주는</strong> 효과. 시작·끝 값만 주면 중간은 브라우저가 자동 계산.<br><pre>.box { transition: background 0.3s; }
+.box:hover { background: orange; }</pre>단, 중간 단계 프레임을 직접 제어할 수는 없음.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== keyframe 정의 ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-09" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-09">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 키 프레임(keyframe)이란 무엇이며, <code>@keyframes</code>에서 위치는 어떻게 지정하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">키 프레임 = 애니메이션 중간의 <strong>핵심 장면</strong>. 개발자가 키프레임만 지정하면 사이 프레임은 컴퓨터가 자동 생성.<br>위치는 <strong>퍼센트(%)</strong> 또는 <code>from</code>(0%)·<code>to</code>(100%)로 지정.<br><pre>@keyframes bounce {
+  from, to { bottom: 0; }
+  50%      { bottom: 200px; }
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== animation 속성 ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-10" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-10">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 정의한 <code>@keyframes bounce</code>를 요소에 무한 반복으로 적용하려면 어떤 속성들을 쓰나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><pre>#ball {
+  animation-name: bounce;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}</pre><code>animation-name</code>(이름) · <code>animation-duration</code>(재생 시간) · <code>animation-iteration-count: infinite</code>(무한 반복).</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== transition vs keyframe ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-11" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-11">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>transition</code>과 <code>@keyframes</code> 애니메이션의 가장 큰 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>transition</code>: 시작↔끝 <strong>2단계</strong> 변화만, 중간 제어 불가.<br><code>@keyframes</code>: 0%·50%·100% 같은 <strong>여러 중간 단계</strong>를 직접 정의, 반복·무한 재생 가능.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== media flex-direction ==================== -->
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week12-12" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week12-12">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 메뉴를 데스크톱에선 가로, 모바일(≤640px)에선 세로로 쌓이게 하려면?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">미디어쿼리로 <code>flex-direction</code>을 바꿈.<br><pre>.nav { display: flex; }  /* 기본: 가로 */
+
+@media (max-width: 640px) {
+  .nav {
+    flex-direction: column;   /* 세로로 쌓임 */
+    align-items: flex-start;
+  }
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /content -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

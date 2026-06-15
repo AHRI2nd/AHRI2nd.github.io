@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11주차 퀴즈 — DevFlash</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flashcard.css">
+</head>
+<body>
+
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
+  <input type="radio"    name="category" id="cat-all" class="hidden-input" checked>
+  <input type="radio"    name="category" id="cat-css" class="hidden-input">
+
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="../index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <div class="nav-breadcrumb">
+          <span class="sep">/</span>
+          <a href="../index.html">홈</a>
+          <span class="sep">/</span>
+          <span class="current">11주차 퀴즈</span>
+        </div>
+        <div class="filter-tabs">
+          <label for="cat-all" class="filter-label">ALL</label>
+          <label for="cat-css" class="filter-label">CSS</label>
+        </div>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+      <div class="progress-section">
+        <span class="progress-text">11주차 · 12 카드</span>
+      </div>
+    </header>
+
+    <div class="page-nav">
+      <div><a href="week10.html" class="btn-nav">← 이전 주차</a></div>
+      <div><a href="../week/week11.html" class="btn-nav">학습 내용 보기</a></div>
+      <div></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="content">
+      <div class="cards-grid">
+
+        <!-- ==================== Flexbox 개요 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-01" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-01">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. Flexbox 레이아웃을 시작하는 방법은? flex container와 flex item은 어떻게 만들어지나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><strong>부모 요소</strong>에 <code>display: flex</code>를 선언하면 그 요소가 <strong>flex container</strong>가 되고, 직접 자식 요소들이 자동으로 <strong>flex item</strong>이 됨.<br><pre>.container { display: flex; }</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== flex-direction ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-02" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-02">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>flex-direction: row</code>와 <code>flex-direction: column</code>의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>row</code>: 아이템을 <strong>가로(왼→오른쪽)</strong> 방향으로 나열 (기본값).<br><code>column</code>: 아이템을 <strong>세로(위→아래)</strong> 방향으로 나열.<br><br>→ 모바일에서 <code>column</code>, 데스크탑에서 <code>row</code>로 전환하는 패턴이 반응형에 자주 사용됨.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== flex-wrap ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-03" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-03">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>flex-wrap: wrap</code>과 <code>flex-wrap: nowrap</code>의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>nowrap</code>: 기본값. 아이템이 넘쳐도 <strong>한 줄에 강제 배치</strong> → 아이템이 찌그러질 수 있음.<br><code>wrap</code>: 공간이 부족하면 <strong>다음 줄로 넘김</strong> (줄바꿈 허용) → 반응형 카드 레이아웃에 필수.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== justify-content / align-items ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-04" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-04">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>justify-content</code>와 <code>align-items</code>는 각각 어느 방향 정렬인가? <code>flex-direction: row</code>일 때 기준으로 설명하라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>justify-content</code>: <strong>메인축(가로) 방향</strong> 정렬.<br>주요 값: <code>flex-start</code> / <code>center</code> / <code>space-between</code> / <code>space-around</code><br><br><code>align-items</code>: <strong>수직축(세로) 방향</strong> 정렬.<br>주요 값: <code>stretch</code>(기본) / <code>center</code> / <code>flex-start</code> / <code>flex-end</code><br><br>→ <code>flex-direction: column</code>이면 축이 반대로 바뀜.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== gap ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-05" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-05">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. flex 컨테이너에서 <code>gap</code> 속성의 역할은?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">플렉스 아이템 <strong>사이의 여백</strong>을 지정.<br><code>gap: 20px</code> — 행·열 모두 20px 간격<br><code>gap: 10px 20px</code> — 행 10px, 열 20px 각각 지정<br><br>margin으로 여백을 주는 것보다 간단하고, 첫/마지막 아이템 바깥에는 여백이 생기지 않는 장점.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== flex-basis ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-06" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-06">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>flex-basis: 100px</code>과 <code>width: 100px</code>의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>flex-basis: 100px</code>: 기본 크기 100px. <strong>100px 미만은 늘어나고, 초과는 그대로 유지</strong>.<br><code>width: 100px</code>: 100px을 넘는 것도 <strong>100px에 맞춰 고정</strong>.<br><br>flex 컨텍스트에서는 <code>flex-basis</code>가 <code>width</code>보다 우선 적용됨.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== flex 단축 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-07" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-07">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>flex: 1</code>을 풀어 쓰면? <code>flex: 1 1 auto</code>와의 차이는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>flex: 1</code> = <code>flex-grow: 1; flex-shrink: 1; flex-basis: 0%;</code><br>→ basis가 0%이므로 남은 공간을 <strong>완전히 균등 분배</strong>.<br><br><code>flex: 1 1 auto</code> = <code>flex-grow: 1; flex-shrink: 1; flex-basis: auto;</code><br>→ basis가 auto이므로 <strong>내용 크기를 기준</strong>으로 유연하게 늘어남.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== order ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-08" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-08">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. flex 아이템의 <code>order</code> 속성은 어떻게 동작하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">아이템의 <strong>배치 순서</strong>를 숫자로 지정. <strong>숫자가 작을수록 먼저</strong> 배치.<br>기본값은 0. 음수도 사용 가능.<br><pre>.item-a { order: 2; }
+.item-b { order: 1; }
+/* 화면에는 b → a 순서로 표시 */</pre>HTML 순서를 바꾸지 않고 시각적 배치만 변경할 때 사용.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== @media 기초 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-09" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-09">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>@media (min-width: 600px)</code>의 의미는? Mobile First 방식이란?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>@media (min-width: 600px)</code>: 뷰포트 너비가 <strong>600px 이상</strong>일 때 내부 CSS 적용.<br><br><strong>Mobile First</strong>: 기본 CSS를 모바일 기준으로 작성하고, <code>min-width</code>로 화면이 커질 때 추가 스타일을 덮어쓰는 방식.<br>→ 작은 화면 우선 → 점차 큰 화면으로 확장.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-10" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-10">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. 모바일에서 세로 배치, 데스크탑(600px+)에서 가로 배치로 바꾸는 반응형 CSS를 작성하라.</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><pre>/* 기본 (모바일) */
+.flex_box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 600px 이상 (데스크탑) */
+@media (min-width: 600px) {
+  .flex_box {
+    flex-direction: row;
+    gap: 50px;
+  }
+}</pre></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- ==================== 반응형 카드 ==================== -->
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-11" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-11">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>flex: 0 0 100%</code>는 어떤 의미인가? 반응형 카드에서 왜 사용하나?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer"><code>flex-grow: 0</code> (늘어나지 않음) · <code>flex-shrink: 0</code> (줄어들지 않음) · <code>flex-basis: 100%</code> (너비 100%).<br><br>→ 카드가 컨테이너 전체 너비를 차지하여 <strong>1열(모바일)</strong> 레이아웃이 됨. <code>flex-wrap: wrap</code>과 함께 쓰면 각 카드가 새 줄에 배치.</div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="card css-card">
+          <input type="checkbox" id="flip-week11-12" class="card-toggle hidden-input">
+          <label class="card-inner" for="flip-week11-12">
+            <div class="card-front">
+              <span class="tag tag-css">CSS</span>
+              <p class="question">Q. <code>flex: 0 0 calc(50% - 10px)</code>에서 <code>calc(50% - 10px)</code>으로 계산하는 이유는?</p>
+              <span class="card-hint">클릭하여 답 확인 →</span>
+            </div>
+            <div class="card-back">
+              <span class="tag tag-css">CSS</span>
+              <div class="answer">2열 레이아웃에서 <code>gap: 20px</code>이 카드 사이에 들어가므로 각 카드의 실제 너비를 <strong>gap의 절반만큼 줄여야</strong> 두 카드가 한 줄에 들어감.<br><br>2열: <code>50% - 20px/2 = 50% - 10px</code><br>4열: <code>25% - (20px × 3)/4 = 25% - 15px</code></div>
+              <span class="card-hint">← 다시 보기</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /cards-grid -->
+    </div><!-- /content -->
+
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+</body>
+</html>

@@ -1,267 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="이상민 — 동양미래대학교 컴퓨터소프트웨어공학과">
-  <title>Sangmin</title>
-  <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2/fonts/variable/woff2/SUITE-Variable.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>DevFlash — 웹 개발 플래시카드</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
-  <div class="ambient">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-    <div class="blob blob-4"></div>
-  </div>
+  <!-- ===== Hidden Controls ===== -->
+  <input type="checkbox" id="dark-mode" class="hidden-input">
 
-  <nav class="nav">
-    <a href="#home" class="nav-logo">Sangmin Lee</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="https://ahri2nd.xyz" target="_blank" rel="noopener">Blog ↗</a></li>
-    </ul>
-  </nav>
+  <!-- ===== Site Wrapper ===== -->
+  <div class="site-wrapper">
 
-  <main>
+    <header class="site-header">
+      <nav class="nav">
+        <a href="index.html" class="brand">
+          <span class="brand-icon">⊞</span>
+          DevFlash
+        </a>
+        <span class="nav-spacer"></span>
+        <label for="dark-mode" class="night-toggle">🌙 Night Mode</label>
+      </nav>
+    </header>
 
-    <!-- ─── Hero ─── -->
-    <section class="hero" id="home">
-      <div class="hero-inner">
-        <p class="hero-greeting reveal">Hello,</p>
-        <h1 class="hero-name reveal">이상민</h1>
-        <p class="hero-tagline reveal">동양미래대학교 컴퓨터소프트웨어공학과</p>
-        <p class="hero-sub reveal">Developer &nbsp;·&nbsp; Creator &nbsp;·&nbsp; Music Enthusiast</p>
-        <div class="hero-actions reveal">
-          <a href="#projects" class="btn-primary">View Projects</a>
-          <a href="#contact" class="btn-ghost">Contact</a>
-          <a href="https://ahri2nd.xyz" target="_blank" rel="noopener" class="btn-ghost">Blog ↗</a>
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-eyebrow">웹프로그래밍기초 학습 프로젝트</p>
+      <h1 class="hero-title">Dev<span class="accent">Flash</span></h1>
+      <p class="hero-sub">HTML · CSS 핵심 개념을 주차별로 정리하고<br>플래시카드로 빠르게 복습하세요.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">13</span>
+          <span class="stat-label">학습 주차</span>
         </div>
-      </div>
-      <div class="hero-scroll reveal">
-        <span class="scroll-line"></span>
-        <span class="scroll-label">scroll</span>
-      </div>
-    </section>
-
-    <!-- ─── About ─── -->
-    <section class="section" id="about">
-      <div class="section-wrap">
-        <header class="section-header reveal">
-          <span class="section-num">00</span>
-          <h2 class="section-title">About</h2>
-        </header>
-        <div class="about-body">
-          <div class="about-text reveal">
-            <p>
-              데스크탑·모바일·오디오 영역을 넘나드는 소프트웨어를 만들고 있습니다.
-              사용자가 직접 느낄 수 있는 도구를 만드는 데 관심이 많으며,
-              음악과 영상 관련 툴체인에 특히 집중하고 있습니다.
-            </p>
-            <p>
-              개인 프로젝트를 통해 Tauri, .NET MAUI, C++/JUCE 등 다양한 스택을 탐구하며
-              실용적인 소프트웨어를 설계하고 구현합니다.
-            </p>
-          </div>
-          <ul class="about-meta reveal">
-            <li>
-              <span class="meta-label">소속</span>
-              <span class="meta-value">동양미래대학교</span>
-            </li>
-            <li>
-              <span class="meta-label">학과</span>
-              <span class="meta-value">컴퓨터소프트웨어공학과</span>
-            </li>
-            <li>
-              <span class="meta-label">Focus</span>
-              <span class="meta-value">Desktop · Mobile · Audio</span>
-            </li>
-            <li>
-              <span class="meta-label">Blog</span>
-              <a href="https://ahri2nd.xyz" target="_blank" rel="noopener" class="meta-link">ahri2nd.xyz ↗</a>
-            </li>
-          </ul>
+        <div class="stat">
+          <span class="stat-num">144</span>
+          <span class="stat-label">플래시카드</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">카테고리</span>
         </div>
       </div>
     </section>
 
-    <!-- ─── Projects ─── -->
-    <section class="section" id="projects">
-      <div class="section-wrap">
-        <header class="section-header reveal">
-          <span class="section-num">01</span>
-          <h2 class="section-title">Projects</h2>
-        </header>
+    <!-- Week List -->
+    <section class="weeks-section">
+      <h2 class="section-title">학습 주차</h2>
+      <div class="weeks-list">
 
-        <div class="cards">
-
-          <article class="card reveal">
-            <div class="card-top">
-              <span class="card-glyph">♪</span>
-              <div class="card-badges">
-                <span class="badge">Tauri</span>
-                <span class="badge">React</span>
-                <span class="badge">TypeScript</span>
-              </div>
-            </div>
-            <h3 class="card-name">Lyrical Sync</h3>
-            <p class="card-desc">
-              LRC 가사 파일 제작·편집 데스크탑 앱<br>
-              AI 자동 싱크(CTC Forced Aligner + Demucs)
-            </p>
-            <div class="card-links">
-              <a href="https://github.com/AHRI2nd/Lyrical-Sync" target="_blank" rel="noopener" class="card-link">
-                GitHub <span class="arrow">→</span>
-              </a>
-              <a href="https://ahri2nd.xyz/posts/lyrical-sync-intro/" target="_blank" rel="noopener" class="card-link">
-                프로젝트 개요 <span class="arrow">→</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-top">
-              <span class="card-glyph">◷</span>
-              <div class="card-badges">
-                <span class="badge">.NET MAUI</span>
-                <span class="badge">C#</span>
-                <span class="badge">Supabase</span>
-              </div>
-            </div>
-            <h3 class="card-name">Anitime</h3>
-            <p class="card-desc">
-              요일별 애니메이션 편성표와 로컬 알림을 제공하는 크로스 플랫폼 모바일 앱<br>
-              Anissia·Jikan 실시간 데이터와 Supabase 백엔드 기반, iOS·Android 지원
-            </p>
-            <div class="card-links">
-              <a href="https://github.com/AHRI2nd/AniTime" target="_blank" rel="noopener" class="card-link">
-                GitHub <span class="arrow">→</span>
-              </a>
-              <span class="card-status">앱스토어 배포 준비 중</span>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-top">
-              <span class="card-glyph">◈</span>
-              <div class="card-badges">
-                <span class="badge">C++</span>
-                <span class="badge">JUCE</span>
-                <span class="badge">WASAPI</span>
-              </div>
-            </div>
-            <h3 class="card-name">Signally</h3>
-            <p class="card-desc">
-              노드 그래프 기반 Windows 오디오 라우터<br>
-              WASAPI 저지연 I/O, VST3 플러그인 호스팅, ASIO 지원
-            </p>
-            <div class="card-links">
-              <a href="https://github.com/AHRI2nd/Signally" target="_blank" rel="noopener" class="card-link">
-                GitHub <span class="arrow">→</span>
-              </a>
-              <span class="card-status">개발 중</span>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-top">
-              <span class="card-glyph">✦</span>
-              <div class="card-badges">
-                <span class="badge">Tauri</span>
-                <span class="badge">React</span>
-                <span class="badge">Rust</span>
-              </div>
-            </div>
-            <h3 class="card-name">Glyphline</h3>
-            <p class="card-desc">
-              SRT·VTT·ASS·SMI를 지원하는 전문 자막 편집기
-            </p>
-            <div class="card-links">
-              <a href="https://github.com/AHRI2nd/Glyphline" target="_blank" rel="noopener" class="card-link">
-                GitHub <span class="arrow">→</span>
-              </a>
-              <span class="card-status">개발 중</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Skills ─── -->
-    <section class="section section-alt" id="skills">
-      <div class="section-wrap">
-        <header class="section-header reveal">
-          <span class="section-num">02</span>
-          <h2 class="section-title">Skills</h2>
-        </header>
-
-        <div class="skill-groups">
-
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title">Languages</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">C++</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">JavaScript</span>
+        <!-- Week 01 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">01</div>
+          <div class="week-info">
+            <p class="week-label">1주차</p>
+            <h3 class="week-title">HTML 기초 · CSS 기초 · Box Model</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-html">HTML</span>
+              <span class="wtag wtag-css">CSS</span>
+              <span class="wtag wtag-boxmodel">Box Model</span>
             </div>
           </div>
+          <div class="week-actions">
+            <a href="week/week01.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week01.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
 
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title">Frameworks & Platforms</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Tauri</span>
-              <span class="skill-tag">.NET MAUI</span>
-              <span class="skill-tag">JUCE</span>
-              <span class="skill-tag">Astro</span>
+        <!-- Week 02 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">02</div>
+          <div class="week-info">
+            <p class="week-label">2주차</p>
+            <h3 class="week-title">HTML 태그 · 이미지 · 링크 · 리스트</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-html">HTML</span>
             </div>
           </div>
+          <div class="week-actions">
+            <a href="week/week02.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week02.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
 
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title">Tools & Libraries</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Supabase</span>
-              <span class="skill-tag">WASAPI</span>
-              <span class="skill-tag">libmpv</span>
+        <!-- Week 03 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">03</div>
+          <div class="week-info">
+            <p class="week-label">3주차</p>
+            <h3 class="week-title">목록 · 테이블 · iframe · 폼(form)</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-html">HTML</span>
             </div>
           </div>
+          <div class="week-actions">
+            <a href="week/week03.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week03.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
 
-        </div>
+        <!-- Week 04 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">04</div>
+          <div class="week-info">
+            <p class="week-label">4주차</p>
+            <h3 class="week-title">CSS 기초 · CSS 선택자 · 시맨틱 태그</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-html">HTML</span>
+              <span class="wtag wtag-css">CSS</span>
+            </div>
+          </div>
+          <div class="week-actions">
+            <a href="week/week04.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week04.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
+
+        <!-- Week 05 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">05</div>
+          <div class="week-info">
+            <p class="week-label">5주차</p>
+            <h3 class="week-title">CSS 선택자 심화 · 가상 요소 · Box Model 속성</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-css">CSS</span>
+            </div>
+          </div>
+          <div class="week-actions">
+            <a href="week/week05.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week05.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
+
+        <!-- Week 06 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">06</div>
+          <div class="week-info">
+            <p class="week-label">6주차</p>
+            <h3 class="week-title">CSS 적용 위치 · 외부 CSS · div vs span · class vs ID</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-css">CSS</span>
+            </div>
+          </div>
+          <div class="week-actions">
+            <a href="week/week06.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week06.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
+
+        <!-- Week 07 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">07</div>
+          <div class="week-info">
+            <p class="week-label">7주차</p>
+            <h3 class="week-title">수평 메뉴 심화 · LVHA · rgba · border · box-sizing · 블록 vs 인라인</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-css">CSS</span>
+            </div>
+          </div>
+          <div class="week-actions">
+            <a href="week/week07.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week07.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
+
+        <!-- Week 08 — 중간고사 -->
+        <article class="week-card week-card--empty">
+          <div class="week-badge">08</div>
+          <div class="week-info">
+            <p class="week-label">8주차</p>
+            <h3 class="week-title">학습 내용 없음</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-exam">중간고사</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Week 09 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">09</div>
+          <div class="week-info">
+            <p class="week-label">9주차</p>
+            <h3 class="week-title">텍스트 CSS · background · background-size · opacity · 그라데이션 글자</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-css">CSS</span>
+            </div>
+          </div>
+          <div class="week-actions">
+            <a href="week/week09.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week09.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
+
+        <!-- Week 10 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">10</div>
+          <div class="week-info">
+            <p class="week-label">10주차</p>
+            <h3 class="week-title">CSS Grid 레이아웃</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-css">CSS</span>
+            </div>
+          </div>
+          <div class="week-actions">
+            <a href="week/week10.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week10.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
+
+        <!-- Week 11 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">11</div>
+          <div class="week-info">
+            <p class="week-label">11주차</p>
+            <h3 class="week-title">CSS Flexbox · 반응형 @media 쿼리</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-css">CSS</span>
+            </div>
+          </div>
+          <div class="week-actions">
+            <a href="week/week11.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week11.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
+
+        <!-- Week 12 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">12</div>
+          <div class="week-info">
+            <p class="week-label">12주차</p>
+            <h3 class="week-title">flex 메뉴 · 2단편집(main+aside) · 전환(transition) · @keyframes 애니메이션</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-css">CSS</span>
+            </div>
+          </div>
+          <div class="week-actions">
+            <a href="week/week12.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week12.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
+
+        <!-- Week 13 — Active -->
+        <article class="week-card week-card--active">
+          <div class="week-badge">13</div>
+          <div class="week-info">
+            <p class="week-label">13주차</p>
+            <h3 class="week-title">position(static·relative·absolute·fixed) · grid · float 메뉴 · iframe 삽입</h3>
+            <div class="week-tags">
+              <span class="wtag wtag-css">CSS</span>
+              <span class="wtag wtag-html">HTML</span>
+            </div>
+          </div>
+          <div class="week-actions">
+            <a href="week/week13.html" class="btn btn-study">학습하기</a>
+            <a href="quiz/week13.html" class="btn btn-quiz">퀴즈</a>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- ─── Contact ─── -->
-    <section class="section" id="contact">
-      <div class="section-wrap">
-        <header class="section-header reveal">
-          <span class="section-num">03</span>
-          <h2 class="section-title">Contact</h2>
-        </header>
-        <p class="contact-line reveal">Feel free to reach out.</p>
-        <div class="contact-items reveal">
-          <a href="mailto:tsukimori@ahri2nd.xyz" class="contact-item">
-            <span class="contact-icon">✉</span>
-            <span>tsukimori@ahri2nd.xyz</span>
-          </a>
-          <a href="https://github.com/AHRI2nd" target="_blank" rel="noopener" class="contact-item">
-            <span class="contact-icon">⌥</span>
-            <span>github.com/AHRI2nd</span>
-          </a>
-        </div>
-      </div>
-    </section>
+    <footer class="site-footer">
+      HTML5 · CSS3 only — no JavaScript &nbsp;|&nbsp; 웹프로그래밍기초 프로젝트
+    </footer>
 
-  </main>
+  </div><!-- /site-wrapper -->
 
-  <footer class="footer">
-    <p>© 2026 이상민</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

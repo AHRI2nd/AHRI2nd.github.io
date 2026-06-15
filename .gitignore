@@ -1,3 +1,35 @@
+# ===== macOS =====
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# ===== Windows =====
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===== Node (보고서 생성 등 도구용) =====
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log*
+.npm/
+
+# ===== 에디터 / IDE =====
+.vscode/
+.idea/
+*.swp
+*~
+
+# ===== Claude Code 로컬 설정 =====
+.claude/settings.local.json
 CLAUDE.md
-.claude/
+AGENTS.md
+
+# ===== 배포 빌드 산출물 (build-dist.sh 로 생성) =====
+dist/
+
+# ===== 로그 / 임시 =====
+*.log
