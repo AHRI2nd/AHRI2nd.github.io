@@ -22,13 +22,6 @@ yarn-error.log*
 .idea/
 *.swp
 *~
-
-# ===== Claude Code 로컬 설정 =====
-.claude/
-CLAUDE.md
-AGENTS.md
-
-# ===== 세션 인수인계 문서 (로컬 전용) =====
 Transfer.md
 
 # ===== 배포 빌드 산출물 (build-dist.sh 로 생성) =====
